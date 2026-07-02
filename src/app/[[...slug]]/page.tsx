@@ -3,9 +3,10 @@ import dynamic from 'next/dynamic';
 import { CardGrid, PageHero } from '@/components/Sections';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
-import { allSlugs, eventCards, newsCards, onSale, pageRecords, products } from '@/lib/site-data';
+import { allSlugs, eventCards, newsCards, onSale, pageRecords } from '@/lib/site-data';
 
 const HomePageClient = dynamic(() => import('@/components/HomePageClient'));
+const ProductPageClient = dynamic(() => import('@/components/ProductPageClient'));
 
 type Params = { slug?: string[] };
 
@@ -47,7 +48,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 }
 
 function renderRoute(key: string) {
-  if (key === 'product') return <ProductPage />;
+  if (key === 'product') return <ProductPageClient />;
   if (key === 'news-2') return <NewsPage />;
   if (key === 'events') return <EventsPage />;
 
@@ -85,18 +86,6 @@ function renderRoute(key: string) {
       {record.slug === 'engkodok-games-latest-news' ? <CardGrid title="Latest News" cards={newsCards} /> : null}
       <div className="text-panel">{record.body?.map((para) => <p key={para}>{para}</p>)}</div>
     </article>
-  );
-}
-
-function ProductPage() {
-  return (
-    <>
-      <PageHero title="PRODUCTS">
-        <p>Cardfight!! Vanguard, Weiss Schwarz, and selected tabletop product lines.</p>
-      </PageHero>
-      <CardGrid title="Cardfight!! Vanguard" cards={products.slice(0, 8)} />
-      <CardGrid title="Weiss Schwarz" cards={products.slice(8)} />
-    </>
   );
 }
 

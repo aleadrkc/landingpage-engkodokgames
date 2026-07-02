@@ -21,7 +21,7 @@ const slides = [
 
 const navItems = [
   ['Home', 'https://engkodokgames.com/'],
-  ['Product', 'https://engkodokgames.com/product/'],
+  ['Product', '/product/'],
   ['Inventory', 'https://inventory.engkodokgames.com/'],
   ['Retailer', 'https://engkodokgames.com/retailer-2/'],
   ['News', 'https://engkodokgames.com/news-2/'],
