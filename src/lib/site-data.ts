@@ -18,26 +18,26 @@ export const assets = {
 };
 
 export const heroSlides: Card[] = [
-  { title: 'Cardfight!! Vanguard Bahasa Melayu', href: '/engkodok-games-latest-news/', image: '/cloned-assets/wp-content/uploads/slider2/307033505_515019567300167_4558219091365422579_n.jpeg' },
+  { title: 'Booster Pack 07', href: '/product/', image: '/cloned-assets/wp-content/uploads/slider2/topheader_782_440_dbt07_02.jpeg' },
+  { title: 'Monster Strike Vol.2', href: '/product/', image: '/cloned-assets/wp-content/uploads/slider2/topheader_782_440_dtb06_01.jpeg' },
   { title: 'Starter Decks Kini Di Pasaran', href: '/product/', image: '/cloned-assets/wp-content/uploads/slider2/SD01-05_Kini_Di_Pasaran.jpeg' },
-  { title: 'New Vanguard Releases', href: '/product/vg-d-bt05/', image: '/cloned-assets/wp-content/uploads/2022/06/Media-Kit-Template_-BT01_MY_v2_1980_JPG.jpg' },
 ];
 
 export const preOrderOpened: Card[] = [
-  { title: 'Minerva Rising', href: '/product/', image: '/cloned-assets/wp-content/uploads/2023/03/bt11.jpg', meta: 'Pre-Order Opened' },
-  { title: 'Dragontree Invasion', href: '/product/', image: '/cloned-assets/wp-content/uploads/2023/03/dbt10.jpg', meta: 'Pre-Order Opened' },
+  { title: 'Booster Pack 07', href: '/product/', image: '/cloned-assets/wp-content/uploads/slider2/topheader_782_440_dbt07_02.jpeg', meta: 'Pre-Order Opened' },
+  { title: 'Monster Strike Vol.2', href: '/product/', image: '/cloned-assets/wp-content/uploads/slider2/topheader_782_440_dtb06_01.jpeg', meta: 'Pre-Order Opened' },
 ];
 
 export const preOrderClosed: Card[] = [
-  { title: 'D-PV01 History Collection', href: '/product/', image: '/cloned-assets/wp-content/uploads/2023/03/dpv01.jpg', meta: 'Pre-Order Closed' },
-  { title: 'D Special Series', href: '/product/', image: '/cloned-assets/wp-content/uploads/2023/03/dss05.jpg', meta: 'Pre-Order Closed' },
+  { title: 'D-BT08', href: '/product/', image: '/cloned-assets/wp-content/uploads/2022/10/VG-D-BT08-2-1024x576.webp', meta: 'Pre-Order Closed' },
+  { title: 'One Turn of Summertime', href: '/product/', image: '/cloned-assets/wp-content/uploads/2022/08/o0tosa_2000x.webp', meta: 'Pre-Order Closed' },
+  { title: 'Saekano Fine', href: '/product/', image: '/cloned-assets/wp-content/uploads/2022/08/saekanofine_1024x1024.webp', meta: 'Pre-Order Closed' },
 ];
 
 export const onSale: Card[] = [
-  { title: 'VG-D-BT05', href: '/product/vg-d-bt05/', image: '/cloned-assets/wp-content/uploads/2022/03/dbt05_main_04256400p3774.jpg', meta: 'Product On Sale' },
-  { title: 'VGE-D-VS04', href: '/product/vge-d-vs04/', image: '/cloned-assets/wp-content/uploads/2022/03/1920-x-1080-px.jpg', meta: 'Product On Sale' },
-  { title: 'VGE-V-VS03', href: '/product/vge-v-vs03/', image: '/cloned-assets/wp-content/uploads/2022/03/1920-x-1080-px-2.jpg', meta: 'Product On Sale' },
-  { title: 'VGE-D-LBT02', href: '/product/vge-d-lbt02/', image: '/cloned-assets/wp-content/uploads/2022/03/1920-x-1080px.jpg', meta: 'Product On Sale' },
+  { title: 'The Quintessential Quintuplets Movie', href: '/product/', image: '/cloned-assets/wp-content/uploads/2022/07/mv_5HY_bp_a.jpg', meta: 'Product On Sale' },
+  { title: 'Record of Ragnarok', href: '/product/', image: '/cloned-assets/wp-content/uploads/2022/07/DTB02_mediakit_banner-1.jpg', meta: 'Product On Sale' },
+  { title: 'D-TD02', href: '/product/', image: '/cloned-assets/wp-content/uploads/2022/06/dtd02_main_865w219d86252.jpg', meta: 'Product On Sale' },
 ];
 
 export const products: Card[] = [

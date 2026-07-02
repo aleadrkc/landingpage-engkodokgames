@@ -4,19 +4,21 @@ type SectionProps = { title: string; cards: Card[]; moreHref?: string; variant?:
 
 export function Hero({ slides }: { slides: Card[] }) {
   const [main, ...rest] = slides;
+  const left = rest[0] ?? main;
+  const right = rest[1] ?? main;
   return (
     <section className="hero" aria-label="Featured releases">
+      <button className="hero-arrow hero-arrow-left" type="button" aria-label="previous arrow">‹</button>
+      <a className="hero-side hero-side-left" href={left.href} aria-label={left.title}>
+        <img src={left.image} alt="" />
+      </a>
       <a className="hero-main" href={main.href}>
         <img src={main.image} alt={main.title} />
-        <span className="hero-label">Featured</span>
       </a>
-      <div className="hero-stack">
-        {rest.map((slide) => (
-          <a key={slide.title} href={slide.href} className="hero-tile">
-            <img src={slide.image} alt={slide.title} />
-          </a>
-        ))}
-      </div>
+      <a className="hero-side hero-side-right" href={right.href} aria-label={right.title}>
+        <img src={right.image} alt="" />
+      </a>
+      <button className="hero-arrow hero-arrow-right" type="button" aria-label="next arrow">›</button>
     </section>
   );
 }
@@ -37,6 +39,24 @@ export function CardGrid({ title, cards, moreHref, variant = 'cards' }: SectionP
       <div className={variant === 'compact' ? 'card-grid compact' : 'card-grid'}>
         {cards.map((card) => <ContentCard key={`${card.title}-${card.image}`} card={card} />)}
       </div>
+    </section>
+  );
+}
+
+export function ImageOnlySection({ title, cards, moreHref, columns = 3 }: SectionProps & { columns?: 2 | 3 }) {
+  return (
+    <section className="home-image-section">
+      <div className="section-heading">
+        <h2>{title}</h2>
+      </div>
+      <div className={columns === 2 ? 'image-tile-grid two' : 'image-tile-grid three'}>
+        {cards.map((card) => (
+          <a key={`${card.title}-${card.image}`} className="image-tile" href={card.href} aria-label={card.title}>
+            <img src={card.image} alt={card.title} />
+          </a>
+        ))}
+      </div>
+      {moreHref ? <a className="home-view-more" href={moreHref}>View More</a> : null}
     </section>
   );
 }

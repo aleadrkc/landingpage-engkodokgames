@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { CardGrid, Hero, PageHero } from '@/components/Sections';
+import { CardGrid, Hero, ImageOnlySection, PageHero } from '@/components/Sections';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
 import { allSlugs, eventCards, heroSlides, newsCards, onSale, pageRecords, preOrderClosed, preOrderOpened, products } from '@/lib/site-data';
@@ -33,10 +33,10 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   return (
     <>
       <SiteHeader />
-      <main id="content">
+      <main id="content" className={key === '' ? 'home-page' : undefined}>
         {renderRoute(key)}
       </main>
-      <SiteFooter />
+      {key === '' ? null : <SiteFooter />}
     </>
   );
 }
@@ -88,9 +88,9 @@ function HomePage() {
   return (
     <>
       <Hero slides={heroSlides} />
-      <CardGrid title="Pre-Order Opened" cards={preOrderOpened} moreHref="/elementor-555/" />
-      <CardGrid title="Pre-Order Closed" cards={preOrderClosed} moreHref="/elementor-555/" />
-      <CardGrid title="Product On Sale" cards={onSale} moreHref="/product/" />
+      <ImageOnlySection title="Pre-Order Opened" cards={preOrderOpened} moreHref="/elementor-555/" columns={2} />
+      <ImageOnlySection title="Pre-Order Closed" cards={preOrderClosed} moreHref="/elementor-555/" columns={3} />
+      <ImageOnlySection title="Product On Sale" cards={onSale} moreHref="/product/" columns={3} />
     </>
   );
 }
