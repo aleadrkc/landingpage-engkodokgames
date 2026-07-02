@@ -1,8 +1,11 @@
 import { notFound } from 'next/navigation';
-import { CardGrid, Hero, ImageOnlySection, PageHero } from '@/components/Sections';
+import dynamic from 'next/dynamic';
+import { CardGrid, PageHero } from '@/components/Sections';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
-import { allSlugs, eventCards, heroSlides, newsCards, onSale, pageRecords, preOrderClosed, preOrderOpened, products } from '@/lib/site-data';
+import { allSlugs, eventCards, newsCards, onSale, pageRecords, products } from '@/lib/site-data';
+
+const HomePageClient = dynamic(() => import('@/components/HomePageClient'));
 
 type Params = { slug?: string[] };
 
@@ -30,6 +33,8 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const key = normalize(slug);
 
+  if (key === '') return <HomePageClient />;
+
   return (
     <>
       <SiteHeader />
@@ -42,7 +47,6 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 }
 
 function renderRoute(key: string) {
-  if (key === '') return <HomePage />;
   if (key === 'product') return <ProductPage />;
   if (key === 'news-2') return <NewsPage />;
   if (key === 'events') return <EventsPage />;
@@ -81,17 +85,6 @@ function renderRoute(key: string) {
       {record.slug === 'engkodok-games-latest-news' ? <CardGrid title="Latest News" cards={newsCards} /> : null}
       <div className="text-panel">{record.body?.map((para) => <p key={para}>{para}</p>)}</div>
     </article>
-  );
-}
-
-function HomePage() {
-  return (
-    <>
-      <Hero slides={heroSlides} />
-      <ImageOnlySection title="Pre-Order Opened" cards={preOrderOpened} moreHref="/elementor-555/" columns={2} />
-      <ImageOnlySection title="Pre-Order Closed" cards={preOrderClosed} moreHref="/elementor-555/" columns={3} />
-      <ImageOnlySection title="Product On Sale" cards={onSale} moreHref="/product/" columns={3} />
-    </>
   );
 }
 
