@@ -27,7 +27,7 @@ const navItems = [
   ['News', '/news/'],
   ['Events', '/events/'],
   ['About', '/about/'],
-  ['Contact', 'https://engkodokgames.com/contact-2/'],
+  ['Contact', '/contact/'],
 ]
 
 export default function HomePageClient() {

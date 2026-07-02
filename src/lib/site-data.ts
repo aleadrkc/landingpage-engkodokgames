@@ -82,4 +82,4 @@ export const pageRecords: PageRecord[] = [
   { slug: 'event/vmc-kuala-lumpur-tagcc', title: 'VMC Kuala Lumpur @ TAGCC | Engkodok Games', kind: 'eventDetail', heading: 'VMC Kuala Lumpur @ TAGCC', image: '/cloned-assets/wp-content/uploads/2022/10/CARDFIGHT-VG-JAPAN.png', body: ['Vanguard Masters Cup Kuala Lumpur listing for TAGCC.'] },
 ];
 
-export const allSlugs = ['', 'product', 'retailer', 'news', 'news-2', 'events', 'about', ...pageRecords.map((page) => page.slug)];
+export const allSlugs = ['', 'product', 'retailer', 'news', 'news-2', 'events', 'about', 'contact', ...pageRecords.map((page) => page.slug)];
