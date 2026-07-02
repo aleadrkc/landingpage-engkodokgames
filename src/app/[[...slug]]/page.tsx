@@ -1,49 +1,146 @@
 import { notFound } from 'next/navigation';
-import data from '@/lib/cloned-pages.json';
-import { BodyClass } from '@/components/BodyClass';
+import { CardGrid, Hero, PageHero } from '@/components/Sections';
+import { SiteFooter } from '@/components/SiteFooter';
+import { SiteHeader } from '@/components/SiteHeader';
+import { allSlugs, eventCards, heroSlides, newsCards, onSale, pageRecords, preOrderClosed, preOrderOpened, products } from '@/lib/site-data';
 
-type ClonedPage = {
-  path: string;
-  slug: string;
-  title: string;
-  bodyClass: string;
-  html: string;
-};
-
-const pages = data.pages as ClonedPage[];
+type Params = { slug?: string[] };
 
 function normalize(slug?: string[]) {
   return (slug ?? []).join('/').replace(/^\/+|\/+$/g, '');
 }
 
 export function generateStaticParams() {
-  return pages.map((page) => ({ slug: page.slug ? page.slug.split('/') : undefined }));
+  return allSlugs.map((slug) => ({ slug: slug ? slug.split('/') : undefined }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug?: string[] }> }) {
+export async function generateMetadata({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const key = normalize(slug);
-  const page = pages.find((item) => item.slug === key) ?? pages.find((item) => item.slug === '');
+  const record = pageRecords.find((page) => page.slug === key);
+  const title = key === '' ? 'Home | Engkodok Games' : key === 'product' ? 'Product | Engkodok Games' : key === 'news-2' ? 'News | Engkodok Games' : key === 'events' ? 'Events | Engkodok Games' : record?.title ?? 'Engkodok Games';
   return {
-    title: page?.title ?? 'Engkodok Games',
-    description: 'Static UI clone of Engkodok Games.',
-    icons: data.icons.length ? { icon: data.icons[0], apple: data.icons.find((icon) => icon.includes('180x180')) ?? data.icons[0] } : undefined,
+    title,
+    description: 'Engkodok Games static Next.js UI clone rebuilt with native components.',
+    icons: { icon: '/cloned-assets/wp-content/uploads/2022/03/cropped-57-px-01-180x180.png' },
   };
 }
 
-export default async function Page({ params }: { params: Promise<{ slug?: string[] }> }) {
+export default async function Page({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const key = normalize(slug);
-  const page = pages.find((item) => item.slug === key);
-
-  if (!page) {
-    notFound();
-  }
 
   return (
     <>
-      <BodyClass className={page.bodyClass} />
-      <div className="eg-clone-root" dangerouslySetInnerHTML={{ __html: page.html }} />
+      <SiteHeader />
+      <main id="content">
+        {renderRoute(key)}
+      </main>
+      <SiteFooter />
     </>
+  );
+}
+
+function renderRoute(key: string) {
+  if (key === '') return <HomePage />;
+  if (key === 'product') return <ProductPage />;
+  if (key === 'news-2') return <NewsPage />;
+  if (key === 'events') return <EventsPage />;
+
+  const record = pageRecords.find((page) => page.slug === key);
+  if (!record) notFound();
+
+  if (record.kind === 'productDetail') {
+    return (
+      <article className="detail-page product-detail">
+        <PageHero title={record.heading ?? record.title} image={record.image}>
+          <p>Product showcase</p>
+        </PageHero>
+        <div className="text-panel">{record.body?.map((para) => <p key={para}>{para}</p>)}</div>
+        <CardGrid title="More Products" cards={onSale.filter((item) => item.title !== record.heading)} moreHref="/product/" variant="compact" />
+      </article>
+    );
+  }
+
+  if (record.kind === 'eventDetail') {
+    return (
+      <article className="detail-page event-detail">
+        <PageHero title={record.heading ?? record.title} image={record.image}>
+          <p>Details · Organizer · Venue</p>
+        </PageHero>
+        <div className="text-panel">{record.body?.map((para) => <p key={para}>{para}</p>)}</div>
+        <CardGrid title="Latest Past Events" cards={eventCards} moreHref="/events/" variant="compact" />
+      </article>
+    );
+  }
+
+  return (
+    <article className="detail-page simple-page">
+      <PageHero title={record.heading ?? record.title} image={record.image} />
+      {record.slug === 'retailer-2' ? <RetailerVisuals /> : null}
+      {record.slug === 'engkodok-games-latest-news' ? <CardGrid title="Latest News" cards={newsCards} /> : null}
+      <div className="text-panel">{record.body?.map((para) => <p key={para}>{para}</p>)}</div>
+    </article>
+  );
+}
+
+function HomePage() {
+  return (
+    <>
+      <Hero slides={heroSlides} />
+      <CardGrid title="Pre-Order Opened" cards={preOrderOpened} moreHref="/elementor-555/" />
+      <CardGrid title="Pre-Order Closed" cards={preOrderClosed} moreHref="/elementor-555/" />
+      <CardGrid title="Product On Sale" cards={onSale} moreHref="/product/" />
+    </>
+  );
+}
+
+function ProductPage() {
+  return (
+    <>
+      <PageHero title="PRODUCTS">
+        <p>Cardfight!! Vanguard, Weiss Schwarz, and selected tabletop product lines.</p>
+      </PageHero>
+      <CardGrid title="Cardfight!! Vanguard" cards={products.slice(0, 8)} />
+      <CardGrid title="Weiss Schwarz" cards={products.slice(8)} />
+    </>
+  );
+}
+
+function NewsPage() {
+  return (
+    <>
+      <PageHero title="Latest News">
+        <p>Announcements, product releases, and community updates.</p>
+      </PageHero>
+      <CardGrid title="Engkodok Games - Latest News!" cards={newsCards} />
+    </>
+  );
+}
+
+function EventsPage() {
+  return (
+    <>
+      <PageHero title="Events">
+        <p>Events Search and Views Navigation · Latest Past Events</p>
+      </PageHero>
+      <CardGrid title="Latest Past Events" cards={eventCards} />
+    </>
+  );
+}
+
+function RetailerVisuals() {
+  const items = [
+    ['/cloned-assets/wp-content/uploads/2022/03/FormV2.png', 'Form'],
+    ['/cloned-assets/wp-content/uploads/2022/03/ConfirmationV2.png', 'Confirmation'],
+    ['/cloned-assets/wp-content/uploads/2022/03/RetailerV2.png', 'Retailer'],
+    ['/cloned-assets/wp-content/uploads/2022/03/SellV2.png', 'Sell'],
+    ['/cloned-assets/wp-content/uploads/2022/03/MarketingV2.png', 'Marketing'],
+    ['/cloned-assets/wp-content/uploads/2022/03/PreOrderV2.png', 'Pre-Order'],
+  ];
+  return (
+    <section className="retailer-visuals">
+      {items.map(([src, alt]) => <img key={src} src={src} alt={alt} />)}
+    </section>
   );
 }
