@@ -182,7 +182,7 @@ export default function HomePageClient() {
       </div>
 
       {/* HOME CONTENT */}
-      <div className="mx-auto max-w-[1170px] px-[15px]">
+      <main id="content" className="mx-auto max-w-[1170px] px-[15px]">
         <div className="nv-single-page-wrap col w-full">
           <div className="nv-content-wrap entry-content max-sm:max-w-full" style={{ maxWidth: 1140, width: '100%' }}>
 
@@ -275,7 +275,14 @@ export default function HomePageClient() {
 
           </div>
         </div>
-      </div>
+      </main>
+
+      <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
+        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
+          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
+          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
+        </div>
+      </footer>
     </>
   )
 }
