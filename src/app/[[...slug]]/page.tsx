@@ -35,6 +35,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const key = normalize(slug);
 
   if (key === '') return <HomePageClient />;
+  if (key === 'product') return <ProductPageClient />;
 
   return (
     <>
