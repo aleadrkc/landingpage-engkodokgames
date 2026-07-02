@@ -295,19 +295,10 @@ export default function EventsPageClient() {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-[#14171C] text-white py-10 px-4">
-        <div className="mx-auto max-w-[1170px] px-[15px]">
-          <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
-            <div className="flex items-center gap-3">
-              <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[55px]" />
-            </div>
-            <nav className="flex flex-wrap justify-center gap-4 md:gap-6">
-              {navItems.map(([label, href]) => (
-                <a key={label} href={href} className="text-sm text-gray-400 hover:text-white">{label}</a>
-              ))}
-            </nav>
-            <p className="text-xs text-gray-500">© 2024 Engkodok Games</p>
-          </div>
+      <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
+        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
+          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
+          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
         </div>
       </footer>
     </>
