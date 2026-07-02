@@ -1,7 +1,7 @@
 'use client'
 
 const navItems = [
-  ['Home', 'https://engkodokgames.com/'],
+  ['Home', '/'],
   ['Product', '/product/'],
   ['Inventory', 'https://inventory.engkodokgames.com/'],
   ['Retailer', 'https://engkodokgames.com/retailer-2/'],
@@ -66,7 +66,7 @@ export default function ProductPageClient() {
               </div>
 
               {/* ===== VG LOGO (centered via columns + aligncenter) ===== */}
-              <div className="wp-block-columns flex justify-center">
+              <div className="wp-block-columns flex justify-center my-10">
                 <div className="wp-block-column" style={{ flexBasis: '100%' }}>
                   <div className="wp-block-image is-style-default">
                     <figure className="aligncenter" style={{ textAlign: 'center', margin: '0 auto', display: 'table' }}>
@@ -122,7 +122,7 @@ export default function ProductPageClient() {
               <hr className="wp-block-separator" style={{ height: 2, background: '#14171C', border: 0, margin: '10px 0 20px' }} />
 
               {/* ===== WS LOGO ===== */}
-              <div className="wp-block-columns flex justify-center">
+              <div className="wp-block-columns flex justify-center my-10">
                 <div className="wp-block-column" style={{ flexBasis: '100%' }}>
                   <div className="wp-block-image">
                     <figure className="aligncenter" style={{ textAlign: 'center', margin: '0 auto', display: 'table' }}>
@@ -169,7 +169,7 @@ export default function ProductPageClient() {
               </div>
 
               {/* ===== SP LOGO ===== */}
-              <div className="wp-block-columns flex justify-center">
+              <div className="wp-block-columns flex justify-center my-10">
                 <div className="wp-block-column" style={{ flexBasis: '100%' }}>
                   <div className="wp-block-image">
                     <figure className="aligncenter" style={{ textAlign: 'center', margin: '0 auto', display: 'table' }}>
