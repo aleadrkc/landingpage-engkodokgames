@@ -5,7 +5,7 @@ const navItems = [
   ['Product', '/product/'],
   ['Inventory', 'https://inventory.engkodokgames.com/'],
   ['Retailer', '/retailer/'],
-  ['News', 'https://engkodokgames.com/news-2/'],
+  ['News', '/news/'],
   ['Events', 'https://engkodokgames.com/?post_type=tribe_events'],
   ['About', 'https://engkodokgames.com/about-publish-games/'],
   ['Contact', 'https://engkodokgames.com/contact-2/'],

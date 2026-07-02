@@ -8,6 +8,7 @@ import { allSlugs, eventCards, newsCards, onSale, pageRecords } from '@/lib/site
 const HomePageClient = dynamic(() => import('@/components/HomePageClient'));
 const ProductPageClient = dynamic(() => import('@/components/ProductPageClient'));
 const RetailerPageClient = dynamic(() => import('@/components/RetailerPageClient'));
+const NewsPageClient = dynamic(() => import('@/components/NewsPageClient'));
 
 type Params = { slug?: string[] };
 
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }) 
   const { slug } = await params;
   const key = normalize(slug);
   const record = pageRecords.find((page) => page.slug === key);
-  const title = key === '' ? 'Home | Engkodok Games' : key === 'product' ? 'Product | Engkodok Games' : key === 'retailer' ? 'Retailer | Engkodok Games' : key === 'news-2' ? 'News | Engkodok Games' : key === 'events' ? 'Events | Engkodok Games' : record?.title ?? 'Engkodok Games';
+  const title = key === '' ? 'Home | Engkodok Games' : key === 'product' ? 'Product | Engkodok Games' : key === 'retailer' ? 'Retailer | Engkodok Games' : key === 'news' ? 'News | Engkodok Games' : key === 'news-2' ? 'News | Engkodok Games' : key === 'events' ? 'Events | Engkodok Games' : record?.title ?? 'Engkodok Games';
   return {
     title,
     description: 'Engkodok Games static Next.js UI clone rebuilt with native components.',
@@ -38,6 +39,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   if (key === '') return <HomePageClient />;
   if (key === 'product') return <ProductPageClient />;
   if (key === 'retailer') return <RetailerPageClient />;
+  if (key === 'news') return <NewsPageClient />;
 
   return (
     <>
@@ -53,6 +55,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 function renderRoute(key: string) {
   if (key === 'product') return <ProductPageClient />;
   if (key === 'retailer') return <RetailerPageClient />;
+  if (key === 'news') return <NewsPageClient />;
   if (key === 'news-2') return <NewsPage />;
   if (key === 'events') return <EventsPage />;
 
