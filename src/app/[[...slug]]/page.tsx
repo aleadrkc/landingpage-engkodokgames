@@ -9,6 +9,7 @@ const HomePageClient = dynamic(() => import('@/components/HomePageClient'));
 const ProductPageClient = dynamic(() => import('@/components/ProductPageClient'));
 const RetailerPageClient = dynamic(() => import('@/components/RetailerPageClient'));
 const NewsPageClient = dynamic(() => import('@/components/NewsPageClient'));
+const EventsPageClient = dynamic(() => import('@/components/EventsPageClient'));
 
 type Params = { slug?: string[] };
 
@@ -40,6 +41,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   if (key === 'product') return <ProductPageClient />;
   if (key === 'retailer') return <RetailerPageClient />;
   if (key === 'news') return <NewsPageClient />;
+  if (key === 'events') return <EventsPageClient />;
 
   return (
     <>
@@ -56,8 +58,8 @@ function renderRoute(key: string) {
   if (key === 'product') return <ProductPageClient />;
   if (key === 'retailer') return <RetailerPageClient />;
   if (key === 'news') return <NewsPageClient />;
+  if (key === 'events') return <EventsPageClient />;
   if (key === 'news-2') return <NewsPage />;
-  if (key === 'events') return <EventsPage />;
 
   const record = pageRecords.find((page) => page.slug === key);
   if (!record) notFound();
