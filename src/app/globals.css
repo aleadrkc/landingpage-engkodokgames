@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+}
+
+.eg-clone-root {
+  min-height: 100vh;
+}
+
+.eg-clone-root img {
+  max-width: 100%;
+}
+
+/* Smart Slider 3 relies on WordPress runtime JS for active-slide transforms.
+   The clone is UI-only, so pin the first slide into the same visible hero slot. */
+#n2-ss-2-align,
+ss3-force-full-width,
+#n2-ss-2-align .n2-padding,
+#n2-ss-2,
+#n2-ss-2 .n2-ss-slider-wrapper-inside,
+#n2-ss-2 .n2-ss-slider-1,
+#n2-ss-2 .n2-ss-slider-2,
+#n2-ss-2 .n2-ss-slider-3,
+#n2-ss-2 .n2-ss-slide-backgrounds {
+  height: 360px !important;
+  min-height: 360px !important;
+  width: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transform: none !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#n2-ss-2 .n2-ss-slide-backgrounds .n2-ss-slide-background {
+  display: none !important;
+}
+
+#n2-ss-2 .n2-ss-slide-backgrounds .n2-ss-slide-background:first-child {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#n2-ss-2 .n2-ss-slide-background:first-child .n2-ss-slide-background-image:first-child,
+#n2-ss-2 .n2-ss-slide-background:first-child .n2-ss-slide-background-image:first-child picture,
+#n2-ss-2 .n2-ss-slide-background:first-child .n2-ss-slide-background-image:first-child img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transform: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+#n2-ss-2 .n2-ss-slide-background:first-child .n2-ss-slide-background-image:nth-child(2),
+#n2-ss-2 .n2-ss-slide-background:first-child .n2-ss-slide-background-image:nth-child(2) picture {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#n2-ss-2 .n2-ss-slide-background:first-child .n2-ss-slide-background-image:nth-child(2) img {
+  width: auto !important;
+  max-width: min(92vw, 1280px) !important;
+  height: 320px !important;
+  object-fit: contain !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#n2-ss-2 .n2-ss-slide,
+#n2-ss-2 .n2-ss-layer {
+  display: none !important;
+}
