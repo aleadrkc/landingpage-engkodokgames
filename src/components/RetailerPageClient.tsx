@@ -72,7 +72,7 @@ export default function RetailerPageClient() {
                 <div className="wp-block-columns flex flex-wrap" style={{ gap: '34px' }}>
                   {/* Left column */}
                   <div className="wp-block-column" style={{ flex: '1 1 0%', minWidth: 0 }}>
-                    <div className="wp-block-columns flex flex-col" style={{ gap: '34px' }}>
+                    <div className="wp-block-columns flex flex-col md:flex-row" style={{ gap: '34px' }}>
                       {/* Step 1 */}
                       <div className="wp-block-column" style={{ flex: '1 1 0%', minWidth: 0 }}>
                         <figure className="wp-block-image size-full is-style-default" style={{ margin: 0, textAlign: 'center' }}>
@@ -124,7 +124,7 @@ export default function RetailerPageClient() {
                   </div>
                   {/* Right column */}
                   <div className="wp-block-column" style={{ flex: '1 1 0%', minWidth: 0 }}>
-                    <div className="wp-block-columns flex flex-col" style={{ gap: '34px' }}>
+                    <div className="wp-block-columns flex flex-col md:flex-row" style={{ gap: '34px' }}>
                       {/* Step 3 */}
                       <div className="wp-block-column" style={{ flex: '1 1 0%', minWidth: 0 }}>
                         <figure className="wp-block-image size-full" style={{ margin: 0, textAlign: 'center' }}>
