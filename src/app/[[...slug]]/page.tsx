@@ -10,6 +10,7 @@ const ProductPageClient = dynamic(() => import('@/components/ProductPageClient')
 const RetailerPageClient = dynamic(() => import('@/components/RetailerPageClient'));
 const NewsPageClient = dynamic(() => import('@/components/NewsPageClient'));
 const EventsPageClient = dynamic(() => import('@/components/EventsPageClient'));
+const AboutPageClient = dynamic(() => import('@/components/AboutPageClient'));
 
 type Params = { slug?: string[] };
 
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }) 
   const { slug } = await params;
   const key = normalize(slug);
   const record = pageRecords.find((page) => page.slug === key);
-  const title = key === '' ? 'Home | Engkodok Games' : key === 'product' ? 'Product | Engkodok Games' : key === 'retailer' ? 'Retailer | Engkodok Games' : key === 'news' ? 'News | Engkodok Games' : key === 'news-2' ? 'News | Engkodok Games' : key === 'events' ? 'Events | Engkodok Games' : record?.title ?? 'Engkodok Games';
+  const title = key === '' ? 'Home | Engkodok Games' : key === 'product' ? 'Product | Engkodok Games' : key === 'retailer' ? 'Retailer | Engkodok Games' : key === 'news' ? 'News | Engkodok Games' : key === 'news-2' ? 'News | Engkodok Games' : key === 'events' ? 'Events | Engkodok Games' : key === 'about' ? 'About | Engkodok Games' : record?.title ?? 'Engkodok Games';
   return {
     title,
     description: 'Engkodok Games static Next.js UI clone rebuilt with native components.',
@@ -42,6 +43,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   if (key === 'retailer') return <RetailerPageClient />;
   if (key === 'news') return <NewsPageClient />;
   if (key === 'events') return <EventsPageClient />;
+  if (key === 'about') return <AboutPageClient />;
 
   return (
     <>
@@ -59,6 +61,7 @@ function renderRoute(key: string) {
   if (key === 'retailer') return <RetailerPageClient />;
   if (key === 'news') return <NewsPageClient />;
   if (key === 'events') return <EventsPageClient />;
+  if (key === 'about') return <AboutPageClient />;
   if (key === 'news-2') return <NewsPage />;
 
   const record = pageRecords.find((page) => page.slug === key);
