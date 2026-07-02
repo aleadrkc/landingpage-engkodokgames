@@ -126,8 +126,8 @@ export default function ContactPageClient() {
                           <form id="forminator-module-133" className="forminator-ui forminator-custom-form forminator-custom-form-133 forminator-design--flat" method="post" noValidate>
                             <div role="alert" aria-live="polite" className="forminator-response-message forminator-error" aria-hidden="true" />
 
-                            <div className="forminator-row" style={{ marginBottom: '10px' }}>
-                              <div id="name-1" className="forminator-field-name forminator-col forminator-col-12">
+                            <div className="forminator-row" style={{ display: 'flex', margin: '0 -15px 30px', padding: 0 }}>
+                              <div id="name-1" className="forminator-field-name forminator-col forminator-col-12" style={{ width: '100%', padding: '0 15px' }}>
                                 <div className="forminator-field">
                                   <input
                                     type="text"
@@ -158,8 +158,8 @@ export default function ContactPageClient() {
                               </div>
                             </div>
 
-                            <div className="forminator-row" style={{ marginBottom: '10px' }}>
-                              <div id="email-1" className="forminator-field-email forminator-col forminator-col-12">
+                            <div className="forminator-row" style={{ display: 'flex', margin: '0 -15px 30px', padding: 0 }}>
+                              <div id="email-1" className="forminator-field-email forminator-col forminator-col-12" style={{ width: '100%', padding: '0 15px' }}>
                                 <div className="forminator-field">
                                   <input
                                     type="email"
@@ -191,14 +191,14 @@ export default function ContactPageClient() {
                               </div>
                             </div>
 
-                            <div className="forminator-row" style={{ marginBottom: '10px' }}>
-                              <div id="textarea-1" className="forminator-field-textarea forminator-col forminator-col-12">
+                            <div className="forminator-row" style={{ display: 'flex', margin: '0 -15px 30px', padding: 0 }}>
+                              <div id="textarea-1" className="forminator-field-textarea forminator-col forminator-col-12" style={{ width: '100%', padding: '0 15px' }}>
                                 <div className="forminator-field">
                                   <label
                                     htmlFor="forminator-field-textarea-1"
                                     id="forminator-field-textarea-1-label"
                                     className="forminator-label"
-                                    style={{ display: 'block', marginBottom: '5px', fontSize: '14px', color: '#14171C', fontFamily: 'Poppins, Arial, Helvetica, sans-serif' }}
+                                    style={{ display: 'block', margin: '0 0 5px', fontSize: '12px', fontWeight: 700, color: '#14171C', fontFamily: 'Poppins, Arial, Helvetica, sans-serif', lineHeight: '20.4px' }}
                                   >
                                     Message
                                   </label>
@@ -226,7 +226,7 @@ export default function ContactPageClient() {
                                       resize: 'vertical',
                                     }}
                                   />
-                                  <span id="forminator-field-textarea-1-description" className="forminator-description" style={{ display: 'block', marginTop: '4px', fontSize: '12px', color: '#777', fontFamily: 'Poppins, Arial, Helvetica, sans-serif' }}>
+                                  <span id="forminator-field-textarea-1-description" className="forminator-description" style={{ display: 'block', margin: '5px 0 0', fontSize: '12px', color: '#777771', fontFamily: 'Poppins, Arial, Helvetica, sans-serif', lineHeight: '18px', textAlign: 'right' }}>
                                     <span data-limit="180" data-type="characters" data-editor="">0 / 180</span>
                                   </span>
                                 </div>
@@ -234,8 +234,8 @@ export default function ContactPageClient() {
                             </div>
 
                             <input type="hidden" name="referer_url" value="" readOnly />
-                            <div className="forminator-row forminator-row-last">
-                              <div className="forminator-col">
+                            <div className="forminator-row forminator-row-last" style={{ display: 'flex', margin: '0 -15px 30px', padding: 0 }}>
+                              <div className="forminator-col" style={{ width: '100%', padding: '0 15px' }}>
                                 <div className="forminator-field">
                                   <button
                                     className="forminator-button forminator-button-submit"
@@ -281,19 +281,19 @@ export default function ContactPageClient() {
                       Get in touch
                     </h2>
 
-                    <p className="wp-block-paragraph" style={contactPStyle}>
-                      <img decoding="async" width={15} height={15} className="wp-image-185 inline-block align-baseline" style={{ width: '15px', marginRight: '12px' }} src="/images/PhoneIcon.png" alt="" />
-                      +603 2702 2023
+                    <p className="wp-block-paragraph" style={contactRowStyle}>
+                      <img decoding="async" width={15} height={15} className="wp-image-185" style={{ width: '15px', flex: '0 0 15px', marginTop: '6px' }} src="/images/PhoneIcon.png" alt="" />
+                      <span>+603 2702 2023</span>
                     </p>
 
-                    <p className="wp-block-paragraph" style={contactPStyle}>
-                      <img decoding="async" width={13} height={16} className="wp-image-264 inline-block align-baseline" style={{ width: '13px', marginRight: '12px' }} src="/images/LocationIcon.png" alt="" />
-                      L3-09, Wisma Academy, No.4A, Jalan 19/1, Seksyen 19, 46300 Petaling Jaya, Selangor
+                    <p className="wp-block-paragraph" style={contactRowStyle}>
+                      <img decoding="async" width={13} height={16} className="wp-image-264" style={{ width: '13px', flex: '0 0 13px', marginTop: '5px' }} src="/images/LocationIcon.png" alt="" />
+                      <span>L3-09, Wisma Academy, No.4A, Jalan 19/1, Seksyen 19, 46300 Petaling Jaya, Selangor</span>
                     </p>
 
-                    <p className="wp-block-paragraph" style={contactPStyle}>
-                      <img decoding="async" width={17} height={12} className="wp-image-266 inline-block align-baseline" style={{ width: '17px', marginRight: '12px' }} src="/images/EmailIcon.png" alt="" />
-                      info@engkodokgames.com
+                    <p className="wp-block-paragraph" style={contactRowStyle}>
+                      <img decoding="async" width={17} height={12} className="wp-image-266" style={{ width: '17px', flex: '0 0 17px', marginTop: '8px' }} src="/images/EmailIcon.png" alt="" />
+                      <span>info@engkodokgames.com</span>
                     </p>
                   </div>
                 </div>
@@ -343,4 +343,11 @@ const contactPStyle = {
   fontFamily: 'Poppins, Arial, Helvetica, sans-serif',
   lineHeight: '28.9px',
   margin: '0 0 30px',
+} as const
+
+const contactRowStyle = {
+  ...contactPStyle,
+  display: 'flex',
+  alignItems: 'flex-start',
+  gap: '12px',
 } as const
