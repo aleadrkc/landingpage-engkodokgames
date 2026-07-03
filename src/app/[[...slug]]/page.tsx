@@ -10,6 +10,7 @@ const ProductPageClient = dynamic(() => import('@/components/ProductPageClient')
 const RetailerPageClient = dynamic(() => import('@/components/RetailerPageClient'));
 const NewsPageClient = dynamic(() => import('@/components/NewsPageClient'));
 const EventsPageClient = dynamic(() => import('@/components/EventsPageClient'));
+const EventVmcKualaLumpurTagccPageClient = dynamic(() => import('@/components/EventVmcKualaLumpurTagccPageClient'));
 const AboutPageClient = dynamic(() => import('@/components/AboutPageClient'));
 const ContactPageClient = dynamic(() => import('@/components/ContactPageClient'));
 
@@ -44,6 +45,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   if (key === 'retailer') return <RetailerPageClient />;
   if (key === 'news') return <NewsPageClient />;
   if (key === 'events') return <EventsPageClient />;
+  if (key === 'event/vmc-kuala-lumpur-tagcc') return <EventVmcKualaLumpurTagccPageClient />;
   if (key === 'about') return <AboutPageClient />;
   if (key === 'contact') return <ContactPageClient />;
 
@@ -63,6 +65,7 @@ function renderRoute(key: string) {
   if (key === 'retailer') return <RetailerPageClient />;
   if (key === 'news') return <NewsPageClient />;
   if (key === 'events') return <EventsPageClient />;
+  if (key === 'event/vmc-kuala-lumpur-tagcc') return <EventVmcKualaLumpurTagccPageClient />;
   if (key === 'about') return <AboutPageClient />;
   if (key === 'contact') return <ContactPageClient />;
   if (key === 'news-2') return <NewsPage />;

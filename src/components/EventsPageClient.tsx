@@ -11,7 +11,24 @@ const navItems = [
   ['Contact', '/contact/'],
 ]
 
-const events = [
+type EventListItem = {
+  month: string
+  day: string
+  year: string
+  img: string | null
+  imgW: number
+  imgH: number
+  dateFull: string
+  dateStart: string
+  dateEnd: string
+  title: string
+  href: string
+  venue: string
+  address: string
+  desc: string
+}
+
+const events: EventListItem[] = [
   {
     month: 'Oct', day: '22', year: '2022',
     img: '/images/CARDFIGHT-VG-JAPAN.png',
@@ -19,6 +36,7 @@ const events = [
     dateFull: 'October 22, 2022 @ 10:00 am - October 23, 2022 @ 7:00 pm',
     dateStart: 'October 22, 2022', dateEnd: 'October 23, 2022',
     title: 'VMC Kuala Lumpur @ TAGCC',
+    href: '/event/vmc-kuala-lumpur-tagcc/',
     venue: 'Tropicana Gardens Mall',
     address: '29 No, Unit CC, 2A, Persiaran Surian, Tropicana Indah, 47810 Petaling Jaya, Selangor, Selangor',
     desc: 'Attention to all cardfighters!! The online pre-registration for VMC Kuala Lumpur is opened now! The deadline of the pre-registration will be on the 16th October 2022. Register now to secure your tournament slot in the event! In conjunction with TAGCC, players are required to have a TAGCC ticker to enter the venue. Pre-registered players can\u2026',
@@ -30,6 +48,7 @@ const events = [
     dateFull: 'August 27, 2022 - August 28, 2022',
     dateStart: 'August 27, 2022', dateEnd: 'August 28, 2022',
     title: 'Vanguard Masters Cup 2022 South Malaysia (Johor Bahru)',
+    href: '/event/vanguard-masters-cup-2022-south-malaysia-johor-bahru/',
     venue: 'KOMTAR JBCC',
     address: 'KOMTAR JBCC, City Centre, 80000 Johor Bahru, Johor, City Centre',
     desc: 'Cardfight!! Vanguard Malaysia Vanguard Masters Cup 2022 (Johor Bahru) 27 - 28 August 2022 KOMTAR JBCC, Atrium (Ground Floor) REGISTRATION period ends at 22 August 2022, 11:59 PM Walk-in Registration and Slots are Subject to Availability Japanese Edition Cards Only Tournament is Open for Malaysian Only How to register? 1. Click the link of the\u2026',
@@ -40,6 +59,7 @@ const events = [
     dateFull: 'July 9, 2022 - July 10, 2022',
     dateStart: 'July 9, 2022', dateEnd: 'July 10, 2022',
     title: 'Vanguard Masters Cup 2022 Spring',
+    href: '/event/vanguard-masters-cup-2022-spring/',
     venue: 'Prangin Mall, Penang',
     address: 'Prangin Mall, No 33, Jalan Dr Lim Chwee Leong, George Town, 10100 George Town, Pulau Pinang, Georgetown',
     desc: 'Dear Players, We are happy to announce that this upcoming 9 - 10 July VANGUARD MASTERS CUP 2022 SPRING will be held at Prangin Mall .. So prepare your best decks and battle your opponents to the very end.. 9 - 10 July Prangin Mall, Penang **Registration Link for players will be out soon!!**',
@@ -240,10 +260,12 @@ export default function EventsPageClient() {
                     {/* Featured image */}
                     {ev.img && (
                       <div style={{ flex: '0 0 200px' }}>
-                        <img src={ev.img} alt=""
-                          className="w-full h-auto"
-                          style={{ aspectRatio: `${ev.imgW}/${ev.imgH}`, maxWidth: 200 }}
-                        />
+                        <a href={ev.href ?? `/event/${ev.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}/`} aria-label={ev.title}>
+                          <img src={ev.img} alt=""
+                            className="w-full h-auto"
+                            style={{ aspectRatio: `${ev.imgW}/${ev.imgH}`, maxWidth: 200 }}
+                          />
+                        </a>
                       </div>
                     )}
 
@@ -258,7 +280,7 @@ export default function EventsPageClient() {
                           fontFamily: '"Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif',
                           margin: '0 0 16px',
                         }}>
-                          <a href={`/event/${ev.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}/`}
+                          <a href={ev.href ?? `/event/${ev.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}/`}
                             style={{ color: '#141827', textDecoration: 'none' }}>
                             {ev.title}
                           </a>
@@ -276,7 +298,7 @@ export default function EventsPageClient() {
                         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
                       }}>
                         <p style={{ margin: '0 0 10px' }}>{ev.desc}</p>
-                        <a href="#" style={{ color: '#141827', fontSize: 14 }}>Read More &raquo;</a>
+                        <a href={ev.href ?? '#'} style={{ color: '#141827', fontSize: 14 }}>Read More &raquo;</a>
                       </div>
                     </div>
                   </div>
