@@ -208,7 +208,7 @@ export default function HomePageClient() {
 
             <div className="flex justify-end">
               <div className="wp-block-button">
-                <a className="wp-block-button__link no-underline inline-block text-center" href="https://engkodokgames.com/product/"
+                <a className="wp-block-button__link no-underline inline-block text-center" href="/product/"
                   style={{ backgroundColor: '#32373C', color: '#fff', padding: '16px 35px', fontSize: 16, fontWeight: 700, lineHeight: '25.6px', borderRadius: 0 }}>
                   View More
                 </a>
@@ -236,7 +236,7 @@ export default function HomePageClient() {
 
             <div className="flex justify-end">
               <div className="wp-block-button">
-                <a className="wp-block-button__link no-underline inline-block text-center" href="https://engkodokgames.com/product/"
+                <a className="wp-block-button__link no-underline inline-block text-center" href="/product/"
                   style={{ backgroundColor: '#32373C', color: '#fff', padding: '16px 35px', fontSize: 16, fontWeight: 700, lineHeight: '25.6px', borderRadius: 0 }}>
                   View More
                 </a>
@@ -264,7 +264,7 @@ export default function HomePageClient() {
 
             <div className="flex justify-end">
               <div className="wp-block-button">
-                <a className="wp-block-button__link no-underline inline-block text-center" href="https://engkodokgames.com/product/"
+                <a className="wp-block-button__link no-underline inline-block text-center" href="/product/"
                   style={{ backgroundColor: '#32373C', color: '#fff', padding: '16px 35px', fontSize: 16, fontWeight: 700, lineHeight: '25.6px', borderRadius: 0 }}>
                   View More
                 </a>
