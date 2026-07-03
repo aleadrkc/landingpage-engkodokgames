@@ -11,6 +11,7 @@ const RetailerPageClient = dynamic(() => import('@/components/RetailerPageClient
 const NewsPageClient = dynamic(() => import('@/components/NewsPageClient'));
 const EventsPageClient = dynamic(() => import('@/components/EventsPageClient'));
 const EventVmcKualaLumpurTagccPageClient = dynamic(() => import('@/components/EventVmcKualaLumpurTagccPageClient'));
+const EventVanguardMastersCupJohorBahruPageClient = dynamic(() => import('@/components/EventVanguardMastersCupJohorBahruPageClient'));
 const AboutPageClient = dynamic(() => import('@/components/AboutPageClient'));
 const ContactPageClient = dynamic(() => import('@/components/ContactPageClient'));
 
@@ -46,6 +47,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   if (key === 'news') return <NewsPageClient />;
   if (key === 'events') return <EventsPageClient />;
   if (key === 'event/vmc-kuala-lumpur-tagcc') return <EventVmcKualaLumpurTagccPageClient />;
+  if (key === 'event/vanguard-masters-cup-2022-south-malaysia-johor-bahru') return <EventVanguardMastersCupJohorBahruPageClient />;
   if (key === 'about') return <AboutPageClient />;
   if (key === 'contact') return <ContactPageClient />;
 
@@ -66,6 +68,7 @@ function renderRoute(key: string) {
   if (key === 'news') return <NewsPageClient />;
   if (key === 'events') return <EventsPageClient />;
   if (key === 'event/vmc-kuala-lumpur-tagcc') return <EventVmcKualaLumpurTagccPageClient />;
+  if (key === 'event/vanguard-masters-cup-2022-south-malaysia-johor-bahru') return <EventVanguardMastersCupJohorBahruPageClient />;
   if (key === 'about') return <AboutPageClient />;
   if (key === 'contact') return <ContactPageClient />;
   if (key === 'news-2') return <NewsPage />;
