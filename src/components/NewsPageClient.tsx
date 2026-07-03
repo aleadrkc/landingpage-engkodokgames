@@ -1,15 +1,6 @@
 'use client'
 
-const navItems = [
-  ['Home', '/'],
-  ['Product', '/product/'],
-  ['Inventory', 'https://inventory.engkodokgames.com/'],
-  ['Retailer', '/retailer/'],
-  ['News', '/news/'],
-  ['Events', '/events/'],
-  ['About', '/about/'],
-  ['Contact', '/contact/'],
-]
+import EngkodokHeader from './EngkodokHeader'
 
 const sharedStyles = {
   h1: { fontSize: 70, fontWeight: 600, color: '#14171C', fontFamily: 'Poppins, Arial, Helvetica, sans-serif', lineHeight: '91px', margin: '0 0 30px' },
@@ -23,35 +14,7 @@ const sharedStyles = {
 export default function NewsPageClient() {
   return (
     <>
-      <header className="header">
-        <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:left-5 focus:top-5 focus:z-50 focus:bg-white focus:p-2.5">Skip to content</a>
-        <div className="hfg_header site-header relative shadow-[0_-1px_3px_0_rgba(0,0,0,0.1)]">
-          <nav className="header--row header-main layout-full-contained nv-navbar max-md:hidden">
-            <div className="mx-auto max-w-[1170px] px-[15px]">
-              <div className="flex w-full items-center py-[14px]">
-                <div className="site-logo shrink-0">
-                  <a className="brand flex items-center" href="https://engkodokgames.com/" aria-label="Engkodok Games Where games is fun">
-                    <img width="200" height="215" src="/images/cropped-Logo-EG.png" alt="" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
-                  </a>
-                </div>
-                <div className="ml-auto">
-                  <ul className="flex items-center gap-0" style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-                    {navItems.map(([label, href]) => (
-                      <li key={label} style={{ margin: 0, padding: 0, listStyle: 'none' }}>
-                        <a href={href}
-                          className={`block px-[22px] py-[34px] text-[13.6px] font-semibold uppercase leading-[21.76px] ${label === 'News' ? 'text-[#e11b22]' : ''}`}
-                          style={{ color: label === 'News' ? '#e11b22' : '#14171C' }}>
-                          {label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <EngkodokHeader active="News" />
 
       <main id="content" className="neve-main min-h-[70vh]">
         <div className="mx-auto max-w-[1170px] px-[15px]">
