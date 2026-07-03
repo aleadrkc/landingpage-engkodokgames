@@ -55,7 +55,8 @@ const events: EventListItem[] = [
   },
   {
     month: 'Jul', day: '9', year: '2022',
-    img: null, imgW: 0, imgH: 0,
+    img: '/images/Poster_VMC22_2-01-1.png',
+    imgW: 1080, imgH: 1080,
     dateFull: 'July 9, 2022 - July 10, 2022',
     dateStart: 'July 9, 2022', dateEnd: 'July 10, 2022',
     title: 'Vanguard Masters Cup 2022 Spring',
