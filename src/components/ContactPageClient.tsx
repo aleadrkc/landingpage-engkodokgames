@@ -1,5 +1,8 @@
 'use client'
 
+import { SiteFooter } from './SiteFooter'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
+
 const navItems = [
   ['Home', '/'],
   ['Product', '/product/'],
@@ -9,6 +12,7 @@ const navItems = [
   ['Events', '/events/'],
   ['About', '/about/'],
   ['Contact', '/contact/'],
+  ['LOCATIONS', '/locations/petaling-jaya/'],
 ]
 
 function Header() {
@@ -21,7 +25,7 @@ function Header() {
             <div className="flex w-full items-center py-[14px]">
               <div className="site-logo shrink-0">
                 <a className="brand flex items-center" href="/" aria-label="Engkodok Games Where games is fun">
-                  <img width="200" height="215" src="/images/cropped-Logo-EG.png" alt="" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
+                  <img width="200" height="215" src="/images/cropped-Logo-EG.png" srcSet={imageSrcSet("/images/cropped-Logo-EG.png")} sizes={imageSizes("/images/cropped-Logo-EG.png")} alt="Engkodok Games logo" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
                 </a>
               </div>
               <div className="ml-auto">
@@ -47,7 +51,7 @@ function Header() {
           <div className="mx-auto max-w-[1170px] px-[15px]">
             <div className="flex items-center justify-between py-[14px]">
               <a className="brand flex items-center" href="/" aria-label="Engkodok Games Where games is fun">
-                <img width="200" height="215" src="/images/cropped-Logo-EG.png" alt="" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
+                <img width="200" height="215" src="/images/cropped-Logo-EG.png" srcSet={imageSrcSet("/images/cropped-Logo-EG.png")} sizes={imageSizes("/images/cropped-Logo-EG.png")} alt="Engkodok Games logo" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
               </a>
               <button type="button" className="flex items-center gap-2 text-[13px] font-semibold uppercase text-[#14171C]" aria-label="Navigation Menu">
                 <span>Menu</span>
@@ -66,14 +70,7 @@ function Header() {
 }
 
 function Footer() {
-  return (
-    <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
-      <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
-        <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
-        <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
-      </div>
-    </footer>
-  )
+  return <SiteFooter />;
 }
 
 export default function ContactPageClient() {
@@ -86,7 +83,7 @@ export default function ContactPageClient() {
           <div className="row">
             <div className="nv-single-page-wrap col">
               <div className="nv-content-wrap entry-content">
-                <h2
+                <h1
                   className="has-text-align-center wp-block-heading"
                   style={{
                     fontSize: '50px',
@@ -99,7 +96,7 @@ export default function ContactPageClient() {
                   }}
                 >
                   Contact Us
-                </h2>
+                </h1>
 
                 <div className="wp-block-columns flex flex-col md:flex-row" style={{ gap: '34px', margin: '0 0 29.75px', padding: 0 }}>
                   <div className="wp-block-column" style={{ flexBasis: '33.33%' }} />
@@ -273,17 +270,17 @@ export default function ContactPageClient() {
                     </h2>
 
                     <p className="wp-block-paragraph" style={contactRowStyle}>
-                      <img decoding="async" width={15} height={15} className="wp-image-185" style={{ width: '15px', flex: '0 0 15px', marginTop: '6px' }} src="/images/PhoneIcon.png" alt="" />
+                      <img decoding="async" width={15} height={15} className="wp-image-185" style={{ width: '15px', flex: '0 0 15px', marginTop: '6px' }} src="/images/PhoneIcon.png" srcSet={imageSrcSet("/images/PhoneIcon.png")} sizes={imageSizes("/images/PhoneIcon.png")} alt="Phone number icon" />
                       <span>+603 2702 2023</span>
                     </p>
 
                     <p className="wp-block-paragraph" style={contactRowStyle}>
-                      <img decoding="async" width={13} height={16} className="wp-image-264" style={{ width: '13px', flex: '0 0 13px', marginTop: '5px' }} src="/images/LocationIcon.png" alt="" />
+                      <img decoding="async" width={13} height={16} className="wp-image-264" style={{ width: '13px', flex: '0 0 13px', marginTop: '5px' }} src="/images/LocationIcon.png" srcSet={imageSrcSet("/images/LocationIcon.png")} sizes={imageSizes("/images/LocationIcon.png")} alt="Location map pin icon" />
                       <span>L3-09, Wisma Academy, No.4A, Jalan 19/1, Seksyen 19, 46300 Petaling Jaya, Selangor</span>
                     </p>
 
                     <p className="wp-block-paragraph" style={contactRowStyle}>
-                      <img decoding="async" width={17} height={12} className="wp-image-266" style={{ width: '17px', flex: '0 0 17px', marginTop: '8px' }} src="/images/EmailIcon.png" alt="" />
+                      <img decoding="async" width={17} height={12} className="wp-image-266" style={{ width: '17px', flex: '0 0 17px', marginTop: '8px' }} src="/images/EmailIcon.png" srcSet={imageSrcSet("/images/EmailIcon.png")} sizes={imageSizes("/images/EmailIcon.png")} alt="Email address icon" />
                       <span>info@engkodokgames.com</span>
                     </p>
                   </div>

@@ -1,5 +1,8 @@
 'use client'
 
+import { SiteFooter } from './SiteFooter'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
+
 const navItems = [
   ['Home', '/'],
   ['Product', '/product/'],
@@ -9,6 +12,7 @@ const navItems = [
   ['Events', '/events/'],
   ['About', '/about/'],
   ['Contact', '/contact/'],
+  ['LOCATIONS', '/locations/petaling-jaya/'],
 ]
 
 type EventListItem = {
@@ -65,6 +69,30 @@ const events: EventListItem[] = [
     address: 'Prangin Mall, No 33, Jalan Dr Lim Chwee Leong, George Town, 10100 George Town, Pulau Pinang, Georgetown',
     desc: 'Dear Players, We are happy to announce that this upcoming 9 - 10 July VANGUARD MASTERS CUP 2022 SPRING will be held at Prangin Mall .. So prepare your best decks and battle your opponents to the very end.. 9 - 10 July Prangin Mall, Penang **Registration Link for players will be out soon!!**',
   },
+  {
+    month: 'Jun', day: '11', year: '2022',
+    img: '/images/bushiroad-spring-fest.svg',
+    imgW: 600, imgH: 200,
+    dateFull: 'June 11, 2022 @ 8:00 am - June 12, 2022 @ 5:00 pm',
+    dateStart: 'June 11, 2022', dateEnd: 'June 12, 2022',
+    title: 'Bushiroad Spring Fest',
+    href: '/events/bushiroad-spring-fest/',
+    venue: '',
+    address: '',
+    desc: 'Overall Tournament Structure. Regional Championship team tournament format for VGE and WSE. Team formation restrictions for VGE-S, VGE-V, VGE-P, and WSE.',
+  },
+  {
+    month: 'Jul', day: '2', year: '2022',
+    img: '/cloned-assets/wp-content/uploads/2022/06/FBJOMBELAJAR_July2022-01.png',
+    imgW: 1080, imgH: 1080,
+    dateFull: 'July 2, 2022 - July 3, 2022',
+    dateStart: 'July 2, 2022', dateEnd: 'July 3, 2022',
+    title: 'Learn 2 Play: Cardfight! Vanguard',
+    href: '/events/lean-2-play-cardfight-vanguard/',
+    venue: 'Pavilion, Bukit Jalil',
+    address: '3rd Floor, Main Atrium, Pavilion, Bukit Jalil',
+    desc: 'GameOn Expo 2022. Learn To Play: Cardfight!! Vanguard Bahasa. Come down to our booth and learn the basics of Cardfight!! Vanguard and become a true champion!',
+  },
 ]
 
 export default function EventsPageClient() {
@@ -79,7 +107,7 @@ export default function EventsPageClient() {
               <div className="flex w-full items-center py-[14px]">
                 <div className="site-logo shrink-0">
                   <a className="brand flex items-center" href="https://engkodokgames.com/" aria-label="Engkodok Games Where games is fun">
-                    <img width="200" height="215" src="/images/cropped-Logo-EG.png" alt="" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
+                    <img width="200" height="215" src="/images/cropped-Logo-EG.png" srcSet={imageSrcSet("/images/cropped-Logo-EG.png")} sizes={imageSizes("/images/cropped-Logo-EG.png")} alt="Engkodok Games logo" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
                   </a>
                 </div>
                 <div className="ml-auto">
@@ -262,7 +290,7 @@ export default function EventsPageClient() {
                     {ev.img && (
                       <div style={{ flex: '0 0 200px' }}>
                         <a href={ev.href ?? `/event/${ev.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}/`} aria-label={ev.title}>
-                          <img src={ev.img} alt=""
+                          <img src={ev.img} alt="Engkodok Games image"
                             className="w-full h-auto"
                             style={{ aspectRatio: `${ev.imgW}/${ev.imgH}`, maxWidth: 200 }}
                           />
@@ -317,13 +345,7 @@ export default function EventsPageClient() {
         </div>
       </main>
 
-      {/* FOOTER */}
-      <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
-        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
-          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
-          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
 
 const slides = [
   { img: '/images/307033505_515019567300167_4558219091365422579_n.jpeg' },
@@ -28,6 +29,7 @@ const navItems = [
   ['Events', '/events/'],
   ['About', '/about/'],
   ['Contact', '/contact/'],
+  ['LOCATIONS', '/locations/petaling-jaya/'],
 ]
 
 export default function HomePageClient() {
@@ -59,7 +61,7 @@ export default function HomePageClient() {
                 <div className="flex w-full items-center py-[14px]">
                   <div className="site-logo shrink-0">
                     <a className="brand flex items-center" href="https://engkodokgames.com/" aria-label="Engkodok Games Where games is fun">
-                      <img width="200" height="215" src="/images/cropped-Logo-EG.png" alt="" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
+                      <img width="200" height="215" src="/images/cropped-Logo-EG.png" srcSet={imageSrcSet("/images/cropped-Logo-EG.png")} sizes={imageSizes("/images/cropped-Logo-EG.png")} alt="Engkodok Games logo" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
                     </a>
                   </div>
                   <div className="ml-auto">
@@ -92,7 +94,7 @@ export default function HomePageClient() {
               <div className="flex items-center justify-between py-[14px]">
                 <div className="site-logo">
                   <a className="brand flex items-center" href="https://engkodokgames.com/" aria-label="Engkodok Games Where games is fun">
-                    <img width="200" height="215" src="/images/cropped-Logo-EG.png" alt="" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
+                    <img width="200" height="215" src="/images/cropped-Logo-EG.png" srcSet={imageSrcSet("/images/cropped-Logo-EG.png")} sizes={imageSizes("/images/cropped-Logo-EG.png")} alt="Engkodok Games logo" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
                   </a>
                 </div>
                 <button onClick={() => setMobileOpen(!mobileOpen)}
@@ -158,13 +160,13 @@ export default function HomePageClient() {
             <div className="relative w-full" style={{ aspectRatio: '1920/450' }}>
               {/* Blurred backgrounds */}
               <div className="absolute inset-0 overflow-hidden">
-                <img src={left.img} alt="" className="absolute inset-0 h-full w-full scale-105 object-cover opacity-40 blur-sm" />
+                <img src={left.img} srcSet={imageSrcSet(left.img)} sizes="100vw" alt="Engkodok Games product promotional image" className="absolute inset-0 h-full w-full scale-105 object-cover opacity-40 blur-sm" />
               </div>
               <div className="relative z-10 mx-auto h-full" style={{ maxWidth: 'min(1200px, 85%)' }}>
-                <img src={main.img} alt="" className="h-full w-full object-contain" />
+                <img src={main.img} srcSet={imageSrcSet(main.img)} sizes="(max-width: 768px) 85vw, 1200px" alt="Engkodok Games product promotional image" className="h-full w-full object-contain" />
               </div>
               <div className="absolute inset-0 overflow-hidden">
-                <img src={right.img} alt="" className="absolute inset-0 h-full w-full scale-105 object-cover opacity-40 blur-sm" />
+                <img src={right.img} srcSet={imageSrcSet(right.img)} sizes="100vw" alt="Engkodok Games product promotional image" className="absolute inset-0 h-full w-full scale-105 object-cover opacity-40 blur-sm" />
               </div>
               <button onClick={prev} className="absolute left-[15px] top-1/2 z-20 -translate-y-1/2 border-0 bg-transparent p-0 opacity-80 hover:opacity-100 max-sm:left-2" aria-label="previous arrow">
                 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="max-sm:w-6 max-sm:h-6">
@@ -182,6 +184,11 @@ export default function HomePageClient() {
       </div>
 
       {/* HOME CONTENT */}
+      {/* HOME H1 — visually hidden for SEO */}
+      <h1 className="sr-only" style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', borderWidth: 0 }}>
+        Engkodok Games – Trading Card &amp; Hobby Store Malaysia
+      </h1>
+
       <main id="content" className="mx-auto max-w-[1170px] px-[15px]">
         <div className="nv-single-page-wrap col w-full">
           <div className="nv-content-wrap entry-content max-sm:max-w-full" style={{ maxWidth: 1140, width: '100%' }}>
@@ -198,7 +205,7 @@ export default function HomePageClient() {
               ].map((item, i) => (
                 <figure key={i} className="wp-block-image max-sm:!basis-full" style={{ margin: 0, flex: '1 0 calc(50% - 4.25px)', minWidth: 0 }}>
                   <a href={item.href} className="block">
-                    <img decoding="async" src={item.src} alt="" className="w-full object-cover" style={{ aspectRatio: '636/324', height: 'auto' }} />
+                    <img decoding="async" src={item.src} srcSet={imageSrcSet(item.src)} sizes={imageSizes(item.src)} alt="Engkodok Games product promotional image" className="w-full object-cover" style={{ aspectRatio: '636/324', height: 'auto' }} />
                   </a>
                 </figure>
               ))}
@@ -227,7 +234,7 @@ export default function HomePageClient() {
                 { src: '/images/mv_5HY_bp_a.jpg' },
               ].map((item, i) => (
                 <figure key={i} className="wp-block-image max-sm:!basis-full" style={{ margin: 0, flex: '1 0 calc(33.33% - 5.67px)', minWidth: 0 }}>
-                  <img decoding="async" loading="lazy" src={item.src} alt="" className="w-full object-cover" style={{ aspectRatio: '636/324', height: 'auto' }} />
+                  <img decoding="async" loading="lazy" src={item.src} srcSet={imageSrcSet(item.src)} sizes={imageSizes(item.src)} alt="Engkodok Games product promotional image" className="w-full object-cover" style={{ aspectRatio: '636/324', height: 'auto' }} />
                 </figure>
               ))}
             </figure>
@@ -255,7 +262,7 @@ export default function HomePageClient() {
                 { src: '/images/topheader_782_440_dtb06_01.jpeg' },
               ].map((item, i) => (
                 <figure key={i} className="wp-block-image max-sm:!basis-full" style={{ margin: 0, flex: '1 0 calc(33.33% - 5.67px)', minWidth: 0 }}>
-                  <img decoding="async" loading="lazy" src={item.src} alt="" className="w-full object-cover" style={{ aspectRatio: '636/324', height: 'auto' }} />
+                  <img decoding="async" loading="lazy" src={item.src} srcSet={imageSrcSet(item.src)} sizes={imageSizes(item.src)} alt="Engkodok Games product promotional image" className="w-full object-cover" style={{ aspectRatio: '636/324', height: 'auto' }} />
                 </figure>
               ))}
             </figure>
@@ -273,14 +280,53 @@ export default function HomePageClient() {
 
             <div style={{ height: 100 }} aria-hidden="true" className="wp-block-spacer max-sm:h-16"></div>
 
+            {/* SEO CONTENT — store info for search engines and visitors */}
+            <section className="entry-content" style={{ maxWidth: 1140, width: '100%', margin: '0 0 40px' }}>
+              <p style={{ fontSize: 17, fontWeight: 400, color: '#14171C', fontFamily: 'Poppins, Arial, Helvetica, sans-serif', lineHeight: '28.9px', margin: '0 0 30px' }}>
+                Engkodok Games is a trusted trading card and hobby store based in Petaling Jaya, Malaysia. We specialise in
+                Weiss Schwarz, Cardfight!! Vanguard, and Bushiroad trading card game products — from booster packs and trial
+                decks to premium collector editions and tournament-legal singles.
+              </p>
+              <p style={{ fontSize: 17, fontWeight: 400, color: '#14171C', fontFamily: 'Poppins, Arial, Helvetica, sans-serif', lineHeight: '28.9px', margin: '0 0 30px' }}>
+                As an authorised distributor for Bushiroad in Malaysia, Engkodok Games supplies retailers nationwide while
+                maintaining a physical storefront at Wisma Academy, Seksyen 19, Petaling Jaya. Whether you are a
+                competitive player preparing for the next Vanguard Masters Cup or a collector hunting rare Weiss Schwarz
+                singles, our team is here to help you find exactly what you need.
+              </p>
+              <p style={{ fontSize: 17, fontWeight: 400, color: '#14171C', fontFamily: 'Poppins, Arial, Helvetica, sans-serif', lineHeight: '28.9px', margin: '0 0 30px' }}>
+                Beyond retail, we host learn-to-play sessions, tournament events, and product launch activations at
+                venues across the Klang Valley and beyond. Our mission is to grow the Malaysian trading card community by
+                making games accessible, fun, and easy to discover.
+              </p>
+              <p style={{ fontSize: 17, fontWeight: 400, color: '#14171C', fontFamily: 'Poppins, Arial, Helvetica, sans-serif', lineHeight: '28.9px', margin: '0 0 30px' }}>
+                Visit our store in Petaling Jaya, Selangor, or browse our latest pre-orders and on-sale products above.
+                From new trial decks to advanced booster boxes, Engkodok Games is your Malaysian destination for
+                everything trading card games.
+              </p>
+            </section>
+
           </div>
         </div>
       </main>
 
       <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
-        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
-          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
-          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
+        <div
+          itemScope
+          itemType="https://schema.org/Organization"
+          className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center"
+        >
+          <img src="/images/cropped-Logo-EG.png" srcSet={imageSrcSet("/images/cropped-Logo-EG.png")} sizes={imageSizes("/images/cropped-Logo-EG.png")} width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
+          <span itemProp="name" className="text-[13px] font-semibold tracking-[0.02em] text-white/90">Engkodok Games</span>
+          <div className="text-[12px] leading-relaxed text-white/70">
+            <p itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+              <span itemProp="streetAddress">L3-09, Wisma Academy, No.4A, Jalan 19/1, Seksyen 19, 46300 Petaling Jaya, Selangor</span>
+            </p>
+            <p>
+              <span itemProp="telephone">+603 2702 2023</span> &middot;{' '}
+              <span itemProp="email">info@engkodokgames.com</span>
+            </p>
+          </div>
+          <p className="text-[11px] font-medium tracking-[0.02em] text-white/50">Engkodok Games &copy; 2026</p>
         </div>
       </footer>
     </>

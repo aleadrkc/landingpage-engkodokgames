@@ -1,6 +1,8 @@
 'use client'
 
 import EngkodokHeader from './EngkodokHeader'
+import { SiteFooter } from './SiteFooter'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
 
 export default function RetailerPageClient() {
   return (
@@ -42,8 +44,8 @@ export default function RetailerPageClient() {
                           <img
                             fetchPriority="high"
                             decoding="async"
-                            src="/images/FormV2.png"
-                            alt=""
+                            src="/images/FormV2.png" srcSet={imageSrcSet("/images/FormV2.png")} sizes={imageSizes("/images/FormV2.png")}
+                            alt="Retailer form step icon"
                             className="wp-image-272"
                             style={{ width: '100%', maxWidth: 372, height: 'auto', aspectRatio: '372/422' }}
                           />
@@ -65,8 +67,8 @@ export default function RetailerPageClient() {
                         <figure className="wp-block-image size-full" style={{ margin: 0, textAlign: 'center' }}>
                           <img
                             decoding="async"
-                            src="/images/ConfirmationV2.png"
-                            alt=""
+                            src="/images/ConfirmationV2.png" srcSet={imageSrcSet("/images/ConfirmationV2.png")} sizes={imageSizes("/images/ConfirmationV2.png")}
+                            alt="Retailer confirmation step icon"
                             className="wp-image-268"
                             style={{ width: '100%', maxWidth: 372, height: 'auto', aspectRatio: '372/422' }}
                           />
@@ -93,8 +95,8 @@ export default function RetailerPageClient() {
                         <figure className="wp-block-image size-full" style={{ margin: 0, textAlign: 'center' }}>
                           <img
                             decoding="async"
-                            src="/images/RetailerV2.png"
-                            alt=""
+                            src="/images/RetailerV2.png" srcSet={imageSrcSet("/images/RetailerV2.png")} sizes={imageSizes("/images/RetailerV2.png")}
+                            alt="Retailer partnership step icon"
                             className="wp-image-269"
                             style={{ width: '100%', maxWidth: 372, height: 'auto', aspectRatio: '372/422' }}
                           />
@@ -118,8 +120,8 @@ export default function RetailerPageClient() {
                             <img
                               decoding="async"
                               loading="lazy"
-                              src="/images/SignUpV2.png"
-                              alt=""
+                              src="/images/SignUpV2.png" srcSet={imageSrcSet("/images/SignUpV2.png")} sizes={imageSizes("/images/SignUpV2.png")}
+                              alt="Retailer sign-up step icon"
                               className="wp-image-271"
                               style={{ width: 179, height: 203, aspectRatio: '179/203' }}
                             />
@@ -166,8 +168,8 @@ export default function RetailerPageClient() {
                       <img
                         decoding="async"
                         loading="lazy"
-                        src="/images/SellV2.png"
-                        alt=""
+                        src="/images/SellV2.png" srcSet={imageSrcSet("/images/SellV2.png")} sizes={imageSizes("/images/SellV2.png")}
+                        alt="Sell products support icon"
                         className="wp-image-275"
                         style={{ width: '100%', maxWidth: 372, height: 'auto', aspectRatio: '372/422' }}
                       />
@@ -180,8 +182,8 @@ export default function RetailerPageClient() {
                       <img
                         decoding="async"
                         loading="lazy"
-                        src="/images/MarketingV2.png"
-                        alt=""
+                        src="/images/MarketingV2.png" srcSet={imageSrcSet("/images/MarketingV2.png")} sizes={imageSizes("/images/MarketingV2.png")}
+                        alt="Marketing support icon"
                         className="wp-image-274"
                         style={{ width: '100%', maxWidth: 372, height: 'auto', aspectRatio: '372/422' }}
                       />
@@ -194,8 +196,8 @@ export default function RetailerPageClient() {
                       <img
                         decoding="async"
                         loading="lazy"
-                        src="/images/PreOrderV2.png"
-                        alt=""
+                        src="/images/PreOrderV2.png" srcSet={imageSrcSet("/images/PreOrderV2.png")} sizes={imageSizes("/images/PreOrderV2.png")}
+                        alt="Pre-order support icon"
                         className="wp-image-273"
                         style={{ width: '100%', maxWidth: 372, height: 'auto', aspectRatio: '372/422' }}
                       />
@@ -212,13 +214,7 @@ export default function RetailerPageClient() {
         </div>
       </main>
 
-      {/* FOOTER (same as product page) */}
-      <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
-        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
-          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
-          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   )
 }

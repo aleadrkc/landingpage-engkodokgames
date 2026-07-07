@@ -10,13 +10,13 @@ export function Hero({ slides }: { slides: Card[] }) {
     <section className="hero" aria-label="Featured releases">
       <button className="hero-arrow hero-arrow-left" type="button" aria-label="previous arrow">‹</button>
       <a className="hero-side hero-side-left" href={left.href} aria-label={left.title}>
-        <img src={left.image} alt="" />
+        <img src={left.image} alt="Engkodok Games image" />
       </a>
       <a className="hero-main" href={main.href}>
         <img src={main.image} alt={main.title} />
       </a>
       <a className="hero-side hero-side-right" href={right.href} aria-label={right.title}>
-        <img src={right.image} alt="" />
+        <img src={right.image} alt="Engkodok Games image" />
       </a>
       <button className="hero-arrow hero-arrow-right" type="button" aria-label="next arrow">›</button>
     </section>

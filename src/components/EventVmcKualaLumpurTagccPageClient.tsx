@@ -4,6 +4,9 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import EngkodokHeader from './EngkodokHeader'
+import { SiteFooter } from './SiteFooter'
+import { EventSchema } from './EventSchema'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
 
 const eventUrl = '/event/vmc-kuala-lumpur-tagcc/'
 const previousEventUrl = '/event/vanguard-masters-cup-2022-south-malaysia-johor-bahru/'
@@ -12,6 +15,18 @@ const mapSrc = 'https://www.google.com/maps?q=29+No%2C+Unit+CC%2C+2A%2C+Persiara
 export default function EventVmcKualaLumpurTagccPageClient() {
   return (
     <>
+      <EventSchema
+        name="VMC Kuala Lumpur @ TAGCC"
+        description="Vanguard Masters Cup Kuala Lumpur at TAGCC, Tropicana Gardens Mall, Petaling Jaya. Cardfight!! Vanguard tournament organized by Engkodok Games."
+        startDate="2022-10-22"
+        endDate="2022-10-23"
+        locationName="Tropicana Gardens Mall"
+        addressLocality="Petaling Jaya"
+        addressRegion="Selangor"
+        image="/images/CARDFIGHT-VG-JAPAN.png"
+        url="/event/vmc-kuala-lumpur-tagcc/"
+        organizerName="Engkodok Games"
+      />
       <EngkodokHeader active="Events" />
 
       <main id="content" className="neve-main min-h-[70vh]">
@@ -68,7 +83,7 @@ export default function EventVmcKualaLumpurTagccPageClient() {
                   <img
                     width="842"
                     height="1191"
-                    src="/images/CARDFIGHT-VG-JAPAN.png"
+                    src="/images/CARDFIGHT-VG-JAPAN.png" srcSet={imageSrcSet("/images/CARDFIGHT-VG-JAPAN.png")} sizes={imageSizes("/images/CARDFIGHT-VG-JAPAN.png")}
                     alt="VMC Kuala Lumpur @ TAGCC"
                     className="attachment-full size-full wp-post-image h-auto w-full max-w-[842px]"
                     style={{ aspectRatio: '842/1191', display: 'block' }}
@@ -173,12 +188,7 @@ export default function EventVmcKualaLumpurTagccPageClient() {
         </section>
       </main>
 
-      <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
-        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
-          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
-          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   )
 }

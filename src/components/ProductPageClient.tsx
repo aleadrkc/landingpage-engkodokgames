@@ -1,6 +1,8 @@
 'use client'
 
 import EngkodokHeader from './EngkodokHeader'
+import { SiteFooter } from './SiteFooter'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
 
 export default function ProductPageClient() {
   return (
@@ -14,10 +16,10 @@ export default function ProductPageClient() {
             <div className="entry-content max-sm:max-w-full" style={{ maxWidth: 1140, width: '100%' }}>
 
               {/* ===== PRODUCTS HEADING ===== */}
-              <h2 className="wp-block-heading max-sm:text-[32px] max-sm:leading-[42px]"
+              <h1 className="wp-block-heading max-sm:text-[32px] max-sm:leading-[42px]"
                 style={{ fontSize: 50, fontWeight: 600, color: '#14171C', textAlign: 'center', margin: '0 0 30px', fontFamily: 'Poppins, Arial, Helvetica, sans-serif' }}>
                 PRODUCTS
-              </h2>
+              </h1>
 
               {/* ===== SEPARATOR (centered via 3-column layout) ===== */}
               <div className="wp-block-columns flex justify-center" style={{ gap: 0 }}>
@@ -33,7 +35,7 @@ export default function ProductPageClient() {
                 <div className="wp-block-column" style={{ flexBasis: '100%' }}>
                   <div className="wp-block-image is-style-default">
                     <figure className="aligncenter" style={{ textAlign: 'center', margin: '0 auto', display: 'table' }}>
-                      <img decoding="async" src="/images/Vg_new_logo.png" alt="" width={300} height={129} className="h-auto" />
+                      <img decoding="async" src="/images/Vg_new_logo.png" srcSet={imageSrcSet("/images/Vg_new_logo.png")} sizes={imageSizes("/images/Vg_new_logo.png")} alt="Cardfight Vanguard logo" width={300} height={129} className="h-auto" />
                     </figure>
                   </div>
                 </div>
@@ -60,13 +62,13 @@ export default function ProductPageClient() {
                   }}>
                     {item.link ? (
                       <a href={item.link}>
-                        <img decoding="async" src={item.src} alt=""
+                        <img decoding="async" src={item.src} srcSet={imageSrcSet(item.src)} sizes={imageSizes(item.src)} alt="Engkodok Games product promotional image"
                           className="w-full"
                           style={{ aspectRatio: `${item.w}/${item.h}`, height: 'auto', objectFit: 'fill' }}
                           loading={i === 0 ? 'eager' : 'lazy'} />
                       </a>
                     ) : (
-                      <img decoding="async" src={item.src} alt=""
+                      <img decoding="async" src={item.src} srcSet={imageSrcSet(item.src)} sizes={imageSizes(item.src)} alt="Engkodok Games product promotional image"
                         className="w-full"
                         style={{ aspectRatio: `${item.w}/${item.h}`, height: 'auto', objectFit: 'fill' }}
                         loading={i === 0 ? 'eager' : 'lazy'} />
@@ -89,7 +91,7 @@ export default function ProductPageClient() {
                 <div className="wp-block-column" style={{ flexBasis: '100%' }}>
                   <div className="wp-block-image">
                     <figure className="aligncenter" style={{ textAlign: 'center', margin: '0 auto', display: 'table' }}>
-                      <img decoding="async" loading="lazy" src="/images/logo-ws.png" alt="" width={321} height={158} className="h-auto" />
+                      <img decoding="async" loading="lazy" src="/images/logo-ws.png" srcSet={imageSrcSet("/images/logo-ws.png")} sizes={imageSizes("/images/logo-ws.png")} alt="Weiss Schwarz logo" width={321} height={158} className="h-auto" />
                     </figure>
                   </div>
                 </div>
@@ -109,7 +111,7 @@ export default function ProductPageClient() {
                     position: 'relative',
                     overflow: 'hidden'
                   }}>
-                    <img decoding="async" loading="lazy" src={item.src} alt=""
+                    <img decoding="async" loading="lazy" src={item.src} srcSet={imageSrcSet(item.src)} sizes={imageSizes(item.src)} alt="Engkodok Games product promotional image"
                       className="w-full object-cover"
                       style={{ aspectRatio: `${item.w}/${item.h}`, height: 'auto', objectFit: 'cover' }} />
                     <figcaption style={{
@@ -136,7 +138,7 @@ export default function ProductPageClient() {
                 <div className="wp-block-column" style={{ flexBasis: '100%' }}>
                   <div className="wp-block-image">
                     <figure className="aligncenter" style={{ textAlign: 'center', margin: '0 auto', display: 'table' }}>
-                      <img decoding="async" loading="lazy" src="/images/logo_sp.png" alt="" width={298} height={108} className="h-auto" />
+                      <img decoding="async" loading="lazy" src="/images/logo_sp.png" srcSet={imageSrcSet("/images/logo_sp.png")} sizes={imageSizes("/images/logo_sp.png")} alt="Weiss Schwarz Schwarzside logo" width={298} height={108} className="h-auto" />
                     </figure>
                   </div>
                 </div>
@@ -146,7 +148,7 @@ export default function ProductPageClient() {
               <div className="wp-block-columns flex" style={{ gap: 0 }}>
                 <div className="wp-block-column" style={{ flex: 1 }}>
                   <figure className="wp-block-image size-large" style={{ margin: 0 }}>
-                    <img decoding="async" loading="lazy" src="/images/o0tosa_2000x.webp" alt="" className="w-full h-auto" />
+                    <img decoding="async" loading="lazy" src="/images/o0tosa_2000x.webp" srcSet={imageSrcSet("/images/o0tosa_2000x.webp")} sizes={imageSizes("/images/o0tosa_2000x.webp")} alt="Weiss Schwarz product banner" className="w-full h-auto" />
                   </figure>
                 </div>
                 <div className="wp-block-column" style={{ flex: 1 }}></div>
@@ -158,13 +160,7 @@ export default function ProductPageClient() {
         </div>
       </main>
 
-      {/* FOOTER */}
-      <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
-        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
-          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
-          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   )
 }

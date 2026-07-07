@@ -4,6 +4,9 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import EngkodokHeader from './EngkodokHeader'
+import { SiteFooter } from './SiteFooter'
+import { EventSchema } from './EventSchema'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
 
 const eventUrl = '/event/vanguard-masters-cup-2022-spring/'
 const previousEventUrl = '/event/learn-2-play-cardfight-vanguard/'
@@ -13,6 +16,18 @@ const mapSrc = 'https://www.google.com/maps?q=Prangin+Mall%2C+No+33%2C+Jalan+Dr+
 export default function EventVanguardMastersCup2022SpringPageClient() {
   return (
     <>
+      <EventSchema
+        name="Vanguard Masters Cup 2022 Spring"
+        description="Vanguard Masters Cup 2022 Spring tournament at Prangin Mall, Penang. Cardfight!! Vanguard competitive event organized by Engkodok Games."
+        startDate="2022-07-09"
+        endDate="2022-07-10"
+        locationName="Prangin Mall, Penang"
+        addressLocality="George Town"
+        addressRegion="Penang"
+        image="/images/Poster_VMC22_2-01-1.png"
+        url="/event/vanguard-masters-cup-2022-spring/"
+        organizerName="Engkodok Games"
+      />
       <EngkodokHeader active="Events" />
 
       <main id="content" className="neve-main min-h-[70vh]">
@@ -70,7 +85,7 @@ export default function EventVanguardMastersCup2022SpringPageClient() {
                   <img
                     width="1080"
                     height="1080"
-                    src="/images/Poster_VMC22_2-01-1.png"
+                    src="/images/Poster_VMC22_2-01-1.png" srcSet={imageSrcSet("/images/Poster_VMC22_2-01-1.png")} sizes={imageSizes("/images/Poster_VMC22_2-01-1.png")}
                     alt="Vanguard Masters Cup 2022 Spring"
                     className="attachment-full size-full wp-post-image h-auto w-full max-w-[1080px]"
                     style={{ aspectRatio: '1080/1080', display: 'block' }}
@@ -169,12 +184,7 @@ export default function EventVanguardMastersCup2022SpringPageClient() {
         </section>
       </main>
 
-      <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
-        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
-          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
-          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   )
 }

@@ -2,6 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { useState } from 'react'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
 
 const navItems = [
   ['Home', '/'],
@@ -12,6 +13,7 @@ const navItems = [
   ['Events', '/events/'],
   ['About', '/about/'],
   ['Contact', '/contact/'],
+  ['LOCATIONS', '/locations/petaling-jaya/'],
 ]
 
 type EngkodokHeaderProps = {
@@ -30,7 +32,7 @@ export default function EngkodokHeader({ active }: EngkodokHeaderProps) {
             <div className="flex w-full items-center py-[14px]">
               <div className="site-logo shrink-0">
                 <a className="brand flex items-center" href="https://engkodokgames.com/" aria-label="Engkodok Games Where games is fun">
-                  <img width="200" height="215" src="/images/cropped-Logo-EG.png" alt="" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
+                  <img width="200" height="215" src="/images/cropped-Logo-EG.png" srcSet={imageSrcSet("/images/cropped-Logo-EG.png")} sizes={imageSizes("/images/cropped-Logo-EG.png")} alt="Engkodok Games logo" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
                 </a>
               </div>
               <div className="ml-auto">
@@ -57,7 +59,7 @@ export default function EngkodokHeader({ active }: EngkodokHeaderProps) {
             <div className="flex items-center justify-between py-[14px]">
               <div className="site-logo">
                 <a className="brand flex items-center" href="https://engkodokgames.com/" aria-label="Engkodok Games Where games is fun">
-                  <img width="200" height="215" src="/images/cropped-Logo-EG.png" alt="" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
+                  <img width="200" height="215" src="/images/cropped-Logo-EG.png" srcSet={imageSrcSet("/images/cropped-Logo-EG.png")} sizes={imageSizes("/images/cropped-Logo-EG.png")} alt="Engkodok Games logo" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
                 </a>
               </div>
               <button

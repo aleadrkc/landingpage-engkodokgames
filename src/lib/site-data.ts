@@ -10,6 +10,7 @@ export const navItems = [
   { label: 'EVENTS', href: '/events/' },
   { label: 'ABOUT', href: '/about-publish-games/' },
   { label: 'CONTACT', href: '/contact-2/' },
+  { label: 'LOCATIONS', href: '/locations/petaling-jaya/' },
 ];
 
 export const assets = {
@@ -59,10 +60,11 @@ export const newsCards: Card[] = [
 ];
 
 export const eventCards: Card[] = [
+  { title: 'Bushiroad Spring Fest', href: '/events/bushiroad-spring-fest/', image: '/images/bushiroad-spring-fest.svg', meta: 'June 11, 2022' },
   { title: 'VMC Kuala Lumpur @ TAGCC', href: '/event/vmc-kuala-lumpur-tagcc/', image: '/cloned-assets/wp-content/uploads/2022/10/CARDFIGHT-VG-JAPAN.png', meta: 'October 22, 2022' },
   { title: 'Vanguard Masters Cup 2022 South Malaysia (Johor Bahru)', href: '/event/vanguard-masters-cup-2022-south-malaysia-johor-bahru/', image: '/cloned-assets/wp-content/uploads/2022/08/Poster_VMC22_Johor-Bahru_V7.png', meta: 'August 27, 2022' },
   { title: 'Vanguard Masters Cup 2022 Spring', href: '/event/vanguard-masters-cup-2022-spring/', image: '/cloned-assets/wp-content/uploads/2022/06/Poster_VMC22_2-01-1.png', meta: 'June 11, 2022' },
-  { title: 'Learn 2 Play: Cardfight! Vanguard', href: '/event/learn-2-play-cardfight-vanguard/', image: '/cloned-assets/wp-content/uploads/2022/06/FBJOMBELAJAR_July2022-01.png', meta: 'July 2022' },
+  { title: 'Learn 2 Play: Cardfight! Vanguard', href: '/events/lean-2-play-cardfight-vanguard/', image: '/cloned-assets/wp-content/uploads/2022/06/FBJOMBELAJAR_July2022-01.png', meta: 'July 2022' },
 ];
 
 export const pageRecords: PageRecord[] = [
@@ -75,11 +77,12 @@ export const pageRecords: PageRecord[] = [
   { slug: 'retailer-2', title: 'Retailer | Engkodok Games', kind: 'simple', heading: 'Retailer', body: ['SIGNUP PROCESS', 'Submit the retailer form, wait for confirmation, and start selling Engkodok Games products.', 'PERKS', 'Retailer support includes product access, marketing material, pre-order support, and community visibility.'] },
   { slug: 'elementor-555', title: 'Pre-Order Products | Engkodok Games', kind: 'simple', heading: 'Pre-Order Products', body: ['Pre-order products, products closing, and on-sale product highlights are shown on the homepage in a cleaner static layout.'] },
   { slug: 'engkodok-games-latest-news', title: 'Engkodok Games - Latest News! | Engkodok Games', kind: 'simple', heading: 'Engkodok Games – Latest News!', body: ['Cardfight!! Vanguard Bahasa, starter deck, booster, and Weiss Schwarz announcements.'] },
-  { slug: 'event/bushiroad-spring-fest', title: 'Bushiroad Spring Fest | Engkodok Games', kind: 'eventDetail', heading: 'Bushiroad Spring Fest', body: ['Details, organizer, and venue information for the Bushiroad Spring Fest listing.'] },
+  { slug: 'events/bushiroad-spring-fest', title: 'Bushiroad Spring Fest | Engkodok Games', kind: 'eventDetail', heading: 'Bushiroad Spring Fest', image: '/images/bushiroad-spring-fest.svg', body: ['Bushiroad Spring Fest tournament details: Regional Championship structure, team formation rules for VGE and WSE, and prize information.'] },
+  { slug: 'events/lean-2-play-cardfight-vanguard', title: 'Learn 2 Play: Cardfight! Vanguard | Engkodok Games', kind: 'eventDetail', heading: 'Learn 2 Play: Cardfight! Vanguard', image: '/cloned-assets/wp-content/uploads/2022/06/FBJOMBELAJAR_July2022-01.png', body: ['Learn to play Cardfight!! Vanguard at GameOn Expo 2022. Free event with basic rules and deck demonstrations.'] },
   { slug: 'event/learn-2-play-cardfight-vanguard', title: 'Learn 2 Play: Cardfight! Vanguard | Engkodok Games', kind: 'eventDetail', heading: 'Learn 2 Play: Cardfight! Vanguard', image: '/cloned-assets/wp-content/uploads/2022/06/FBJOMBELAJAR_July2022-01.png', body: ['Community learn-to-play event for Cardfight!! Vanguard.'] },
   { slug: 'event/vanguard-masters-cup-2022-spring', title: 'Vanguard Masters Cup 2022 Spring | Engkodok Games', kind: 'eventDetail', heading: 'Vanguard Masters Cup 2022 Spring', image: '/cloned-assets/wp-content/uploads/2022/06/Poster_VMC22_2-01-1.png', body: ['Vanguard Masters Cup 2022 Spring event information.'] },
   { slug: 'event/vanguard-masters-cup-2022-south-malaysia-johor-bahru', title: 'Vanguard Masters Cup 2022 South Malaysia (Johor Bahru) | Engkodok Games', kind: 'eventDetail', heading: 'Vanguard Masters Cup 2022 South Malaysia (Johor Bahru)', image: '/cloned-assets/wp-content/uploads/2022/08/Poster_VMC22_Johor-Bahru_V7.png', body: ['South Malaysia Vanguard Masters Cup event hosted in Johor Bahru.'] },
   { slug: 'event/vmc-kuala-lumpur-tagcc', title: 'VMC Kuala Lumpur @ TAGCC | Engkodok Games', kind: 'eventDetail', heading: 'VMC Kuala Lumpur @ TAGCC', image: '/cloned-assets/wp-content/uploads/2022/10/CARDFIGHT-VG-JAPAN.png', body: ['Vanguard Masters Cup Kuala Lumpur listing for TAGCC.'] },
 ];
 
-export const allSlugs = ['', 'product', 'retailer', 'news', 'news-2', 'events', 'about', 'contact', ...pageRecords.map((page) => page.slug)];
+export const allSlugs = ['', 'product', 'retailer', 'news', 'news-2', 'events', 'about', 'contact', 'locations/petaling-jaya', ...pageRecords.map((page) => page.slug)];

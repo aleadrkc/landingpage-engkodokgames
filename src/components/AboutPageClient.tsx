@@ -1,5 +1,8 @@
 'use client'
 
+import { SiteFooter } from './SiteFooter'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
+
 const navItems = [
   ['Home', '/'],
   ['Product', '/product/'],
@@ -9,6 +12,7 @@ const navItems = [
   ['Events', '/events/'],
   ['About', '/about/'],
   ['Contact', '/contact/'],
+  ['LOCATIONS', '/locations/petaling-jaya/'],
 ]
 
 export default function AboutPageClient() {
@@ -22,7 +26,7 @@ export default function AboutPageClient() {
               <div className="flex w-full items-center py-[14px]">
                 <div className="site-logo shrink-0">
                   <a className="brand flex items-center" href="/" aria-label="Engkodok Games Where games is fun">
-                    <img width="200" height="215" src="/images/cropped-Logo-EG.png" alt="" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
+                    <img width="200" height="215" src="/images/cropped-Logo-EG.png" srcSet={imageSrcSet("/images/cropped-Logo-EG.png")} sizes={imageSizes("/images/cropped-Logo-EG.png")} alt="Engkodok Games logo" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
                   </a>
                 </div>
                 <div className="ml-auto">
@@ -48,7 +52,7 @@ export default function AboutPageClient() {
             <div className="mx-auto max-w-[1170px] px-[15px]">
               <div className="flex items-center justify-between py-[14px]">
                 <a className="brand flex items-center" href="/" aria-label="Engkodok Games Where games is fun">
-                  <img width="200" height="215" src="/images/cropped-Logo-EG.png" alt="" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
+                  <img width="200" height="215" src="/images/cropped-Logo-EG.png" srcSet={imageSrcSet("/images/cropped-Logo-EG.png")} sizes={imageSizes("/images/cropped-Logo-EG.png")} alt="Engkodok Games logo" className="h-auto w-[55px]" style={{ aspectRatio: '200/215' }} />
                 </a>
                 <button type="button" className="flex items-center gap-2 text-[13px] font-semibold uppercase text-[#14171C]" aria-label="Navigation Menu">
                   <span>Menu</span>
@@ -90,8 +94,8 @@ export default function AboutPageClient() {
                                 decoding="async"
                                 width={1024}
                                 height={682}
-                                src="/images/AboutUsPic-1024x682.png"
-                                alt=""
+                                src="/images/AboutUsPic-1024x682.png" srcSet={imageSrcSet("/images/AboutUsPic-1024x682.png")} sizes={imageSizes("/images/AboutUsPic-1024x682.png")}
+                                alt="Engkodok Games store and team photo"
                                 className="wp-image-130 h-auto w-full"
                                 style={{ aspectRatio: '1024/682' }}
                               />
@@ -99,8 +103,7 @@ export default function AboutPageClient() {
                           </div>
 
                           <div className="wp-block-column is-vertically-aligned-center" style={{ flexBasis: '50%' }}>
-                            <h2
-                              className="has-neve-text-color-color has-text-color wp-block-heading"
+                            <h1
                               style={{
                                 fontSize: '50px',
                                 fontWeight: 600,
@@ -111,7 +114,7 @@ export default function AboutPageClient() {
                               }}
                             >
                               Our Story
-                            </h2>
+                            </h1>
 
                             <p
                               className="has-neve-text-color-color has-text-color has-medium-font-size wp-block-paragraph"
@@ -158,12 +161,7 @@ export default function AboutPageClient() {
         </div>
       </main>
 
-      <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
-        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
-          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
-          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   )
 }

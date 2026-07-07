@@ -4,6 +4,9 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import EngkodokHeader from './EngkodokHeader'
+import { SiteFooter } from './SiteFooter'
+import { EventSchema } from './EventSchema'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
 
 const eventUrl = '/event/vanguard-masters-cup-2022-south-malaysia-johor-bahru/'
 const previousEventUrl = '/event/vanguard-masters-cup-2022-spring/'
@@ -13,6 +16,18 @@ const mapSrc = 'https://www.google.com/maps?q=KOMTAR+JBCC%2C+City+Centre%2C+8000
 export default function EventVanguardMastersCupJohorBahruPageClient() {
   return (
     <>
+      <EventSchema
+        name="Vanguard Masters Cup 2022 South Malaysia (Johor Bahru)"
+        description="South Malaysia Vanguard Masters Cup 2022 at KOMTAR JBCC, Johor Bahru. Cardfight!! Vanguard tournament organized by Engkodok Games."
+        startDate="2022-08-27"
+        endDate="2022-08-28"
+        locationName="KOMTAR JBCC"
+        addressLocality="Johor Bahru"
+        addressRegion="Johor"
+        image="/images/Poster_VMC22_Johor-Bahru_V7.png"
+        url="/event/vanguard-masters-cup-2022-south-malaysia-johor-bahru/"
+        organizerName="Engkodok Games"
+      />
       <EngkodokHeader active="Events" />
 
       <main id="content" className="neve-main min-h-[70vh]">
@@ -70,7 +85,7 @@ export default function EventVanguardMastersCupJohorBahruPageClient() {
                   <img
                     width="1080"
                     height="1081"
-                    src="/images/Poster_VMC22_Johor-Bahru_V7.png"
+                    src="/images/Poster_VMC22_Johor-Bahru_V7.png" srcSet={imageSrcSet("/images/Poster_VMC22_Johor-Bahru_V7.png")} sizes={imageSizes("/images/Poster_VMC22_Johor-Bahru_V7.png")}
                     alt="Vanguard Masters Cup 2022 South Malaysia (Johor Bahru)"
                     className="attachment-full size-full wp-post-image h-auto w-full max-w-[1080px]"
                     style={{ aspectRatio: '1080/1081', display: 'block' }}
@@ -191,12 +206,7 @@ export default function EventVanguardMastersCupJohorBahruPageClient() {
         </section>
       </main>
 
-      <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
-        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
-          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
-          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   )
 }

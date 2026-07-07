@@ -1,6 +1,8 @@
 'use client'
 
 import EngkodokHeader from './EngkodokHeader'
+import { SiteFooter } from './SiteFooter'
+import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
 
 const sharedStyles = {
   h1: { fontSize: 70, fontWeight: 600, color: '#14171C', fontFamily: 'Poppins, Arial, Helvetica, sans-serif', lineHeight: '91px', margin: '0 0 30px' },
@@ -38,7 +40,7 @@ export default function NewsPageClient() {
               <div className="wp-block-columns flex flex-col md:flex-row" style={{ gap: sharedStyles.columnGap }}>
                 <div className="wp-block-column" style={{ flexBasis: '66.66%', minWidth: 0 }}>
                   <figure className="wp-block-image size-large" style={{ margin: 0 }}>
-                    <img fetchPriority="high" decoding="async" src="/images/FB-price-banner2.jpg" alt="" className="w-full h-auto" style={{ aspectRatio: '1024/389' }} />
+                    <img fetchPriority="high" decoding="async" src="/images/FB-price-banner2.jpg" srcSet={imageSrcSet("/images/FB-price-banner2.jpg")} sizes={imageSizes("/images/FB-price-banner2.jpg")} alt="Cardfight Vanguard Bahasa starter deck price banner" className="w-full h-auto" style={{ aspectRatio: '1024/389' }} />
                     <figcaption style={sharedStyles.figcaption}>
                       Mark you date! As Cardfight!! Vanguard Bahasa Starter Deck 01 – 05 will be on sale on 23 September 2022!
                     </figcaption>
@@ -61,7 +63,7 @@ export default function NewsPageClient() {
               <div className="wp-block-columns flex flex-col md:flex-row" style={{ gap: sharedStyles.columnGap }}>
                 <div className="wp-block-column" style={{ flexBasis: '66.66%', minWidth: 0 }}>
                   <figure className="wp-block-image size-large" style={{ margin: 0 }}>
-                    <img decoding="async" src="/images/Media-Kit-Template-BT01.jpg" alt="" className="w-full h-auto" style={{ aspectRatio: '1024/472' }} />
+                    <img decoding="async" src="/images/Media-Kit-Template-BT01.jpg" srcSet={imageSrcSet("/images/Media-Kit-Template-BT01.jpg")} sizes={imageSizes("/images/Media-Kit-Template-BT01.jpg")} alt="Cardfight Vanguard BT01 media kit banner" className="w-full h-auto" style={{ aspectRatio: '1024/472' }} />
                   </figure>
                 </div>
                 <div className="wp-block-column" style={{ flexBasis: '33.33%', minWidth: 0 }}>
@@ -81,12 +83,12 @@ export default function NewsPageClient() {
               <div className="wp-block-columns alignwide are-vertically-aligned-center flex flex-col md:flex-row" style={{ gap: sharedStyles.columnGap }}>
                 <div className="wp-block-column" style={{ flexBasis: '25%', minWidth: 0 }}>
                   <figure className="wp-block-image" style={{ margin: 0, textAlign: 'center' }}>
-                    <img decoding="async" src="/images/vs05.png" alt="1 display contains 12 packs 1 pack contains 7 cards [84 types of cards (38 new cards / 46 reissue cards) (RRR: 84) + Parallels: 15 types (VSR: 3 + SP: 12)] ※VSR = Vanguard Secret Rare ※Each box is guaranteed to have 1 SP!" className="w-full h-auto" style={{ maxWidth: 605, aspectRatio: '605/613' }} />
+                    <img decoding="async" src="/images/vs05.png" srcSet={imageSrcSet("/images/vs05.png")} sizes={imageSizes("/images/vs05.png")} alt="1 display contains 12 packs 1 pack contains 7 cards [84 types of cards (38 new cards / 46 reissue cards) (RRR: 84) + Parallels: 15 types (VSR: 3 + SP: 12)] ※VSR = Vanguard Secret Rare ※Each box is guaranteed to have 1 SP!" className="w-full h-auto" style={{ maxWidth: 605, aspectRatio: '605/613' }} />
                   </figure>
                 </div>
                 <div className="wp-block-column" style={{ flexBasis: '75%', minWidth: 0 }}>
                   <figure className="wp-block-image size-full is-resized" style={{ margin: 0, textAlign: 'center' }}>
-                    <img decoding="async" loading="lazy" src="/images/vs06.png" alt="" className="h-auto" width={263} height={268} style={{ aspectRatio: '263/268' }} />
+                    <img decoding="async" loading="lazy" src="/images/vs06.png" srcSet={imageSrcSet("/images/vs06.png")} sizes={imageSizes("/images/vs06.png")} alt="Cardfight Vanguard product display VS06" className="h-auto" width={263} height={268} style={{ aspectRatio: '263/268' }} />
                   </figure>
                 </div>
               </div>
@@ -97,17 +99,17 @@ export default function NewsPageClient() {
               <div className="wp-block-columns flex flex-col md:flex-row" style={{ gap: sharedStyles.columnGap }}>
                 <div className="wp-block-column" style={{ flex: '1 1 0%', minWidth: 0 }}>
                   <figure className="wp-block-image size-large" style={{ margin: 0 }}>
-                    <img decoding="async" loading="lazy" src="/images/dtd01_main.jpg" alt="" className="w-full h-auto" style={{ aspectRatio: '1024/576' }} />
+                    <img decoding="async" loading="lazy" src="/images/dtd01_main.jpg" srcSet={imageSrcSet("/images/dtd01_main.jpg")} sizes={imageSizes("/images/dtd01_main.jpg")} alt="dtd01 main" className="w-full h-auto" style={{ aspectRatio: '1024/576' }} />
                   </figure>
                 </div>
                 <div className="wp-block-column" style={{ flex: '1 1 0%', minWidth: 0 }}>
                   <figure className="wp-block-image size-large" style={{ margin: 0 }}>
-                    <img decoding="async" loading="lazy" src="/images/dtd02_main.jpg" alt="" className="w-full h-auto" style={{ aspectRatio: '1024/576' }} />
+                    <img decoding="async" loading="lazy" src="/images/dtd02_main.jpg" srcSet={imageSrcSet("/images/dtd02_main.jpg")} sizes={imageSizes("/images/dtd02_main.jpg")} alt="dtd02 main" className="w-full h-auto" style={{ aspectRatio: '1024/576' }} />
                   </figure>
                 </div>
                 <div className="wp-block-column" style={{ flex: '1 1 0%', minWidth: 0 }}>
                   <figure className="wp-block-image size-large" style={{ margin: 0 }}>
-                    <img decoding="async" loading="lazy" src="/images/dtd03_main.jpg" alt="" className="w-full h-auto" style={{ aspectRatio: '1024/576' }} />
+                    <img decoding="async" loading="lazy" src="/images/dtd03_main.jpg" srcSet={imageSrcSet("/images/dtd03_main.jpg")} sizes={imageSizes("/images/dtd03_main.jpg")} alt="dtd03 main" className="w-full h-auto" style={{ aspectRatio: '1024/576' }} />
                   </figure>
                 </div>
               </div>
@@ -126,7 +128,7 @@ export default function NewsPageClient() {
               <div className="wp-block-columns flex flex-col md:flex-row" style={{ gap: sharedStyles.columnGap }}>
                 <div className="wp-block-column" style={{ flexBasis: '66.66%', minWidth: 0 }}>
                   <figure className="wp-block-image size-large" style={{ margin: 0 }}>
-                    <img decoding="async" loading="lazy" src="/images/db06_hero.jpg" alt="" className="w-full h-auto" style={{ aspectRatio: '1024/576' }} />
+                    <img decoding="async" loading="lazy" src="/images/db06_hero.jpg" srcSet={imageSrcSet("/images/db06_hero.jpg")} sizes={imageSizes("/images/db06_hero.jpg")} alt="db06 hero" className="w-full h-auto" style={{ aspectRatio: '1024/576' }} />
                     <figcaption style={sharedStyles.figcaption}>
                       VG-D-BT06 Cardfight!! Vanguard: will+Dress Booster Pack Vol. 6 – Horyu Enbu will be release on 5 August 2022!
                     </figcaption>
@@ -152,7 +154,7 @@ export default function NewsPageClient() {
               <div className="wp-block-columns flex flex-col md:flex-row" style={{ gap: sharedStyles.columnGap }}>
                 <div className="wp-block-column" style={{ flex: '1 1 0%', minWidth: 0 }}>
                   <figure className="wp-block-image size-large" style={{ margin: 0 }}>
-                    <img decoding="async" loading="lazy" src="/images/date_a_live_booster2.jpg" alt="" className="w-full h-auto" style={{ aspectRatio: '1024/543' }} />
+                    <img decoding="async" loading="lazy" src="/images/date_a_live_booster2.jpg" srcSet={imageSrcSet("/images/date_a_live_booster2.jpg")} sizes={imageSizes("/images/date_a_live_booster2.jpg")} alt="date a live booster2" className="w-full h-auto" style={{ aspectRatio: '1024/543' }} />
                   </figure>
                 </div>
                 <div className="wp-block-column" style={{ flex: '1 1 0%', minWidth: 0 }}>
@@ -170,13 +172,7 @@ export default function NewsPageClient() {
         </div>
       </main>
 
-      {/* FOOTER */}
-      <footer className="mt-20 bg-[#14171C] px-4 py-8 text-white">
-        <div className="mx-auto flex max-w-[1170px] flex-col items-center justify-center gap-3 px-[15px] text-center">
-          <img src="/images/cropped-Logo-EG.png" width={66} height={71} alt="Engkodok Games" className="h-auto w-[48px] opacity-95" />
-          <p className="text-[13px] font-medium tracking-[0.02em] text-white/80">Engkodok Games © 2026</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   )
 }
