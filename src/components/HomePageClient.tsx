@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
-import { imageSizes, imageSrcSet } from '@/lib/responsive-images'
+import { useState, useCallback } from 'react'
+import { imageSizes, imageSrcSet, responsiveImages } from '@/lib/responsive-images'
 
 const slides = [
   { img: '/images/307033505_515019567300167_4558219091365422579_n.jpeg' },
@@ -32,6 +32,11 @@ const navItems = [
   ['LOCATIONS', '/locations/petaling-jaya/'],
 ]
 
+function heroBackground(src: string) {
+  const variants = responsiveImages[src]
+  return variants?.find((item) => item.width >= 1280)?.src ?? variants?.at(-1)?.src ?? src
+}
+
 export default function HomePageClient() {
   const [current, setCurrent] = useState(0)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -39,14 +44,7 @@ export default function HomePageClient() {
   const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), [])
   const prev = useCallback(() => setCurrent((c) => (c - 1 + slides.length) % slides.length), [])
 
-  useEffect(() => {
-    const timer = setInterval(next, 4000)
-    return () => clearInterval(timer)
-  }, [next])
-
   const main = slides[current]
-  const left = slides[(current - 1 + slides.length) % slides.length]
-  const right = slides[(current + 1) % slides.length]
 
   return (
     <>
@@ -158,15 +156,14 @@ export default function HomePageClient() {
         <div className="n2-section-smartslider fitviconsignore n2_clear w-full" style={{ transform: 'none' }}>
           <div className="relative w-full overflow-hidden bg-black">
             <div className="relative w-full" style={{ aspectRatio: '1920/450' }}>
-              {/* Blurred backgrounds */}
-              <div className="absolute inset-0 overflow-hidden">
-                <img src={left.img} srcSet={imageSrcSet(left.img)} sizes="100vw" alt="Engkodok Games product promotional image" className="absolute inset-0 h-full w-full scale-105 object-cover opacity-40 blur-sm" />
-              </div>
+              {/* Blurred background uses the active hero image to avoid extra HTTP requests. */}
+              <div
+                className="absolute inset-0 scale-105 bg-cover bg-center opacity-40 blur-sm"
+                style={{ backgroundImage: `url(${heroBackground(main.img)})` }}
+                aria-hidden="true"
+              />
               <div className="relative z-10 mx-auto h-full" style={{ maxWidth: 'min(1200px, 85%)' }}>
                 <img src={main.img} srcSet={imageSrcSet(main.img)} sizes="(max-width: 768px) 85vw, 1200px" alt="Engkodok Games product promotional image" className="h-full w-full object-contain" />
-              </div>
-              <div className="absolute inset-0 overflow-hidden">
-                <img src={right.img} srcSet={imageSrcSet(right.img)} sizes="100vw" alt="Engkodok Games product promotional image" className="absolute inset-0 h-full w-full scale-105 object-cover opacity-40 blur-sm" />
               </div>
               <button onClick={prev} className="absolute left-[15px] top-1/2 z-20 -translate-y-1/2 border-0 bg-transparent p-0 opacity-80 hover:opacity-100 max-sm:left-2" aria-label="previous arrow">
                 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="max-sm:w-6 max-sm:h-6">
